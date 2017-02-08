@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.GerenciadorTelaController">
+   <children>
+      <SplitPane dividerPositions="0.5" focusTraversable="true" layoutY="-7.0" orientation="VERTICAL" prefHeight="657.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
+         <items>
+            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="104.0" prefWidth="998.0" style="-fx-background-image: url(&quot;/gambar/header.gif&quot;); -fx-background-size: 100% 100%;" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="40.0" layoutY="23.0" text="Guia de Cadastramento" textFill="#046272">
+                     <font>
+                        <Font name="Gill Sans MT" size="40.0" />
+                     </font>
+                     <effect>
+                        <Reflection topOpacity="0.2" />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="676.0">
+               <children>
+                  <SplitPane focusTraversable="true" layoutX="602.0" layoutY="48.0" prefHeight="525.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane prefHeight="693.0" prefWidth="850.0">
+                           <children>
+                              <VBox layoutX="161.0" layoutY="108.0" prefHeight="233.0" prefWidth="354.0" spacing="20.0">
+                                 <children>
+                                    <TextField fx:id="fieldCpf" />
+                                    <TextField fx:id="fieldNome" />
+                                    <TextField fx:id="fieldEmail" alignment="CENTER" />
+                                    <TextField fx:id="fieldTelefone" />
+                                    <PasswordField fx:id="fieldPassword" />
+                                    <PasswordField fx:id="fieldPasswordTwo" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
