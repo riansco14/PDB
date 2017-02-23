@@ -22,7 +22,7 @@ public class App extends Application {
         stage=primaryStage;
         Parent root= null;
         try {
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/GerenciadorTela.fxml"));
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/GerenciadorTela2.fxml"));
             root = loader.load();
 
             Scene scene=new Scene(root);

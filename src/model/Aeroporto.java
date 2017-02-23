@@ -54,7 +54,7 @@ public class Aeroporto {
 
     private Empresa empresa;
 
-    @OneToOne(optional = false)
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
     public Empresa getEmpresa() {
         return empresa;
     }

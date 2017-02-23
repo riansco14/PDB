@@ -20,12 +20,12 @@ public abstract class GenericDAO <T> {
         this.classe = (Class<T>) t2;
     }
 
-    public T localizar(long id) {
+    public T localizar(int id) {
         T obj=null;
         Session session=HibernateUtil.getSession();
         //session.beginTransaction();
         obj=(T)session.get(classe,id);
-        session.close();
+      //  session.close();
         return obj;
     }
 

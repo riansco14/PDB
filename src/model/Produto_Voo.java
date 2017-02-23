@@ -77,17 +77,6 @@ public class Produto_Voo {
         this.trechos = trechos;
     }
 
-    private Rota rota;
-
-    @OneToOne(optional = false)
-    public Rota getRota() {
-        return rota;
-    }
-
-    public void setRota(Rota rota) {
-        this.rota = rota;
-    }
-
     private int id;
 
     @Id

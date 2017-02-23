@@ -1,18 +1,27 @@
 package model;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import model.City.Cidade;
+
+import javax.persistence.*;
+
 
 /**
  * Created by RIAN on 10/11/2016.
  */
 @Entity
 public class Endereco {
+
+    public Endereco build(String rua, String pais, String estado, String cidade, String bairro, int numero) {
+        this.rua = rua;
+        this.bairro = bairro;
+        this.numero = numero;
+        return this;
+    }
+
     private int id;
 
-    @Id@GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -30,39 +39,6 @@ public class Endereco {
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    private String pais;
-
-    @Basic
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    private String estado;
-
-    @Basic
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    private String cidade;
-
-    @Basic
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     private String bairro;
@@ -85,5 +61,16 @@ public class Endereco {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    private Cidade cidade;
+
+    @OneToOne(optional = false)
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 }

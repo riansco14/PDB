@@ -10,7 +10,7 @@ public class Assento {
 
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;
@@ -51,5 +51,16 @@ public class Assento {
 
     public void setNumBilhete(Bilhete numBilhete) {
         this.numBilhete = numBilhete;
+    }
+
+    private int numAssento;
+
+    @Basic
+    public int getNumAssento() {
+        return numAssento;
+    }
+
+    public void setNumAssento(int numAssento) {
+        this.numAssento = numAssento;
     }
 }

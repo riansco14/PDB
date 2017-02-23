@@ -10,7 +10,7 @@ import java.util.Collection;
 public class Tripulacao {
     private Collection<Funcionario> funcionarios;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     public Collection<Funcionario> getFuncionarios() {
         return funcionarios;
     }
@@ -21,7 +21,7 @@ public class Tripulacao {
 
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;

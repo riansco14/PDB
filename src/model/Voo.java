@@ -12,28 +12,39 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity
 public class Voo {
 
-    public void Construtor(Rota rota, Collection<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
-        this.rota = rota;
+    public void Construtor( Collection<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
         this.aeronave = aeronave;
         this.estado = estado;
         this.dataChegada = dataChegada;
         this.dataPartida = dataPartida;
     }
+    /* ROTA DO VOO*/
+    private Aeroporto origem;
 
-    private Rota rota;
-
-    @OneToOne//(optional = false)
-    public Rota getRota() {
-        return rota;
+    @OneToOne(cascade = CascadeType.ALL)
+    public Aeroporto getOrigem() {
+        return origem;
     }
 
-    public void setRota(Rota rota) {
-        this.rota = rota;
+    public void setOrigem(Aeroporto oneToOne) {
+        this.origem = oneToOne;
     }
+
+    private Aeroporto destino;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    public Aeroporto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeroporto destino) {
+        this.destino = destino;
+    }
+    /*                                                                                          */
 
     private Aeronave aeronave;
 
-    @OneToOne//(optional = false)
+    @OneToOne(cascade = CascadeType.ALL)//(optional = false)
     public Aeronave getAeronave() {
         return aeronave;
     }
@@ -44,7 +55,7 @@ public class Voo {
 
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;
@@ -91,7 +102,7 @@ public class Voo {
 
     private Collection<Assento> assentos;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     public Collection<Assento> getAssentos() {
         return assentos;
     }

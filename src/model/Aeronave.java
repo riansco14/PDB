@@ -18,15 +18,6 @@ public class Aeronave {
         this.tripulacao = tripulacao;
     }
 
-    //    @OneToMany
-//    public Collection<Assento> getAssentos() {
-//        return assentos;
-//    }
-//
-//    public void setAssentos(Collection<Assento> assentos) {
-//        this.assentos = assentos;
-//    }
-
     private int numAssentos;
 
     @Basic
@@ -62,12 +53,19 @@ public class Aeronave {
 
     private Empresa companhia;
 
-    @OneToOne(optional = false)
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
     public Empresa getCompanhia() {
         return companhia;
     }
 
     public void setCompanhia(Empresa companhia) {
+        this.companhia = companhia;
+    }
+
+    public void build(Tripulacao tripulacao, int numAssentos,  String nome, Empresa companhia) {
+        this.tripulacao = tripulacao;
+        this.numAssentos = numAssentos;
+        this.nome = nome;
         this.companhia = companhia;
     }
 }
