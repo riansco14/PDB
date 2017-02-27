@@ -1,160 +1,395 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="PostgreSQL - postgres@localhost">
+<dataSource name="PostgreSQL - pds@localhost">
   <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
     <database id="1" name="postgres">
+      <object-id>12373</object-id>
       <visible>1</visible>
     </database>
-    <schema id="2" parent="1" name="public">
+    <database id="2" name="pds">
+      <object-id>16453</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="3" name="clientes">
+      <object-id>16393</object-id>
+    </database>
+    <database id="4" name="pbd">
+      <object-id>16532</object-id>
+    </database>
+    <database id="5" name="dblocal">
+      <object-id>16908</object-id>
+    </database>
+    <schema id="6" parent="1" name="public">
       <object-id>2200</object-id>
       <comment>standard public schema</comment>
       <visible>1</visible>
       <introspection-state-number>1237</introspection-state-number>
       <introspection-timestamp>2016-11-10.17:41:05.607</introspection-timestamp>
     </schema>
-    <schema id="3" parent="1" name="teste">
+    <schema id="7" parent="1" name="teste">
       <object-id>49158</object-id>
     </schema>
-    <sequence id="4" parent="2" name="hibernate_sequence">
+    <schema id="8" parent="2" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>651</introspection-state-number>
+      <introspection-timestamp>2017-02-27.14:21:15.828</introspection-timestamp>
+    </schema>
+    <schema id="9" parent="2" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="10" parent="2" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="11" parent="2" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="12" parent="2" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="13" parent="2" name="information_schema">
+      <object-id>12081</object-id>
+    </schema>
+    <sequence id="14" parent="6" name="hibernate_sequence">
       <object-id>254205</object-id>
       <state-number>1237</state-number>
     </sequence>
-    <table id="5" parent="2" name="endereco">
+    <table id="15" parent="6" name="endereco">
       <object-id>254166</object-id>
       <state-number>1235</state-number>
     </table>
-    <table id="6" parent="2" name="enderecos_por_pessoa">
+    <table id="16" parent="6" name="enderecos_por_pessoa">
       <object-id>254174</object-id>
       <state-number>1236</state-number>
     </table>
-    <table id="7" parent="2" name="pessoa">
+    <table id="17" parent="6" name="pessoa">
       <object-id>254177</object-id>
       <state-number>1236</state-number>
     </table>
-    <table id="8" parent="2" name="ressoa">
+    <table id="18" parent="6" name="ressoa">
       <object-id>254158</object-id>
       <state-number>1233</state-number>
     </table>
-    <table id="9" parent="2" name="ressoa_endereco">
+    <table id="19" parent="6" name="ressoa_endereco">
       <object-id>254163</object-id>
       <state-number>1234</state-number>
     </table>
-    <column id="10" parent="5" name="idendereco">
+    <sequence id="20" parent="8" name="departamento_id_seq">
+      <object-id>16491</object-id>
+      <state-number>648</state-number>
+    </sequence>
+    <sequence id="21" parent="8" name="presidencia_id_seq">
+      <object-id>16464</object-id>
+      <state-number>644</state-number>
+    </sequence>
+    <sequence id="22" parent="8" name="sede_id_seq">
+      <object-id>16499</object-id>
+      <state-number>650</state-number>
+    </sequence>
+    <sequence id="23" parent="8" name="titular_id_seq">
+      <object-id>16517</object-id>
+      <state-number>651</state-number>
+    </sequence>
+    <table id="24" parent="8" name="departamento">
+      <object-id>16493</object-id>
+      <state-number>651</state-number>
+    </table>
+    <table id="25" parent="8" name="presidencia">
+      <object-id>16466</object-id>
+      <state-number>650</state-number>
+    </table>
+    <table id="26" parent="8" name="sede">
+      <object-id>16501</object-id>
+      <state-number>650</state-number>
+    </table>
+    <table id="27" parent="8" name="titular">
+      <object-id>16519</object-id>
+      <state-number>651</state-number>
+    </table>
+    <column id="28" parent="15" name="idendereco">
       <state-number>1230</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="11" parent="5" name="estado">
+    <column id="29" parent="15" name="estado">
       <state-number>1230</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="12" parent="5" name="pais">
+    <column id="30" parent="15" name="pais">
       <state-number>1230</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="13" parent="5" name="endereco_pkey">
+    <index id="31" parent="15" name="endereco_pkey">
       <object-id>254172</object-id>
       <columns>idendereco</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="14" parent="5" name="endereco_pkey">
+    <key id="32" parent="15" name="endereco_pkey">
       <columns>idendereco</columns>
       <underlying-index>endereco_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="15" parent="6" name="pessoa_id">
+    <column id="33" parent="16" name="pessoa_id">
       <state-number>1231</state-number>
       <mandatory>1</mandatory>
       <data-type>bigint|0</data-type>
     </column>
-    <column id="16" parent="6" name="endereco_id">
+    <column id="34" parent="16" name="endereco_id">
       <state-number>1231</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <foreign-key id="17" parent="6" name="fk903e48a8bde62df">
+    <foreign-key id="35" parent="16" name="fk903e48a8bde62df">
       <columns>pessoa_id</columns>
       <ref-key>~.pessoa.pessoa_pkey</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="18" parent="6" name="fk903e48a8510f4a5f">
+    <foreign-key id="36" parent="16" name="fk903e48a8510f4a5f">
       <columns>endereco_id</columns>
       <ref-key>~.endereco.endereco_pkey</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="19" parent="7" name="cpf">
+    <column id="37" parent="17" name="cpf">
       <state-number>1232</state-number>
       <mandatory>1</mandatory>
       <data-type>bigint|0</data-type>
     </column>
-    <column id="20" parent="7" name="data_nasc">
+    <column id="38" parent="17" name="data_nasc">
       <state-number>1232</state-number>
       <data-type>date|0</data-type>
     </column>
-    <column id="21" parent="7" name="email">
+    <column id="39" parent="17" name="email">
       <state-number>1232</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="22" parent="7" name="nome">
+    <column id="40" parent="17" name="nome">
       <state-number>1232</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="23" parent="7" name="senha">
+    <column id="41" parent="17" name="senha">
       <state-number>1232</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="24" parent="7" name="pessoa_pkey">
+    <index id="42" parent="17" name="pessoa_pkey">
       <object-id>254183</object-id>
       <columns>cpf</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="25" parent="7" name="pessoa_pkey">
+    <key id="43" parent="17" name="pessoa_pkey">
       <columns>cpf</columns>
       <underlying-index>pessoa_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="26" parent="8" name="id">
+    <column id="44" parent="18" name="id">
       <state-number>1228</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="27" parent="8" name="cpf">
+    <column id="45" parent="18" name="cpf">
       <state-number>1228</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="28" parent="8" name="ressoa_pkey">
+    <index id="46" parent="18" name="ressoa_pkey">
       <object-id>254161</object-id>
       <columns>id</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="29" parent="8" name="ressoa_pkey">
+    <key id="47" parent="18" name="ressoa_pkey">
       <columns>id</columns>
       <underlying-index>ressoa_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="30" parent="9" name="ressoa_id">
+    <column id="48" parent="19" name="ressoa_id">
       <state-number>1229</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="31" parent="9" name="enderecos_idendereco">
+    <column id="49" parent="19" name="enderecos_idendereco">
       <state-number>1229</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <foreign-key id="32" parent="9" name="fka01c1c337d0f21f">
+    <foreign-key id="50" parent="19" name="fka01c1c337d0f21f">
       <columns>ressoa_id</columns>
       <ref-key>~.ressoa.ressoa_pkey</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <foreign-key id="33" parent="9" name="fka01c1c3b60c0c87">
+    <foreign-key id="51" parent="19" name="fka01c1c3b60c0c87">
       <columns>enderecos_idendereco</columns>
       <ref-key>~.endereco.endereco_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="52" parent="24" name="id">
+      <state-number>648</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;departamento_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="53" parent="24" name="nome">
+      <state-number>648</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="54" parent="24" name="departamento_pkey">
+      <object-id>16497</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="55" parent="24" name="departamento_pkey">
+      <object-id>16498</object-id>
+      <columns>id</columns>
+      <underlying-index>departamento_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="56" parent="25" name="id">
+      <state-number>644</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;presidencia_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="57" parent="25" name="cpf">
+      <state-number>644</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="58" parent="25" name="nome">
+      <state-number>644</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="59" parent="25" name="telefone">
+      <state-number>644</state-number>
+      <data-type>varchar(12)|0</data-type>
+    </column>
+    <index id="60" parent="25" name="presidencia_pkey">
+      <object-id>16470</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="61" parent="25" name="presidencia_cpf_key">
+      <object-id>16472</object-id>
+      <columns>cpf</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="62" parent="25" name="presidencia_pkey">
+      <object-id>16471</object-id>
+      <columns>id</columns>
+      <underlying-index>presidencia_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="63" parent="25" name="presidencia_cpf_key">
+      <object-id>16473</object-id>
+      <columns>cpf</columns>
+      <underlying-index>presidencia_cpf_key</underlying-index>
+    </key>
+    <column id="64" parent="26" name="id">
+      <state-number>650</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;sede_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="65" parent="26" name="nome">
+      <state-number>650</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="66" parent="26" name="id_presidencia">
+      <state-number>650</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="67" parent="26" name="id_dept">
+      <state-number>650</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="68" parent="26" name="sede_pkey">
+      <object-id>16505</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="69" parent="26" name="sede_pkey">
+      <object-id>16506</object-id>
+      <columns>id</columns>
+      <underlying-index>sede_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="70" parent="26" name="sede_id_presidencia_fkey">
+      <object-id>16507</object-id>
+      <columns>id_presidencia</columns>
+      <ref-key>~.presidencia.presidencia_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="71" parent="26" name="sede_id_dept_fkey">
+      <object-id>16512</object-id>
+      <columns>id_dept</columns>
+      <ref-key>~.departamento.departamento_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="72" parent="27" name="id">
+      <state-number>651</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;titular_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="73" parent="27" name="nome">
+      <state-number>651</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="74" parent="27" name="foto">
+      <state-number>651</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="75" parent="27" name="telefone">
+      <state-number>651</state-number>
+      <data-type>varchar(12)|0</data-type>
+    </column>
+    <column id="76" parent="27" name="numero_titulo">
+      <state-number>651</state-number>
+      <data-type>varchar(12)|0</data-type>
+    </column>
+    <column id="77" parent="27" name="id_depto">
+      <state-number>651</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="78" parent="27" name="titular_pkey">
+      <object-id>16523</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="79" parent="27" name="titular_foto_key">
+      <object-id>16525</object-id>
+      <columns>foto</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="80" parent="27" name="titular_pkey">
+      <object-id>16524</object-id>
+      <columns>id</columns>
+      <underlying-index>titular_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="81" parent="27" name="titular_foto_key">
+      <object-id>16526</object-id>
+      <columns>foto</columns>
+      <underlying-index>titular_foto_key</underlying-index>
+    </key>
+    <foreign-key id="82" parent="27" name="titular_id_depto_fkey">
+      <object-id>16527</object-id>
+      <columns>id_depto</columns>
+      <ref-key>~.departamento.departamento_pkey</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
