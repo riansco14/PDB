@@ -2,6 +2,7 @@ package main;/**
  * Created by RIAN on 14/11/2016.
  */
 
+import DAO.EmpresaDAO;
 import DAO.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Empresa;
 import org.hibernate.Session;
 
 import java.io.IOException;
@@ -44,8 +46,10 @@ public class App extends Application {
     public void pegarConexao(){
         try {
 
-            Session secao = new HibernateUtil().getSession();
-            
+
+            EmpresaDAO cadastrar = new EmpresaDAO();
+            cadastrar.inserir(new Empresa("Minha Empresa"));
+
 
 
         }

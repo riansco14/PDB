@@ -7,7 +7,9 @@ import javax.persistence.Id;
 
 /**
  * Created by RIAN on 10/11/2016.
+ * Modify by Francisco Bezerra on 27/02/2017
  */
+
 @Entity
 public class Empresa {
     private int id;
@@ -16,6 +18,10 @@ public class Empresa {
     @Id
     public int getId() {
         return id;
+    }
+
+    public Empresa(String nome) {
+        this.nome = nome;
     }
 
     public void setId(int id) {
