@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.cadEmpresaController">
+   <children>
+      <TextField fx:id="nomeEmpresa" layoutX="22.0" layoutY="59.0" prefHeight="39.0" prefWidth="643.0" />
+      <Button fx:id="salvarButton" defaultButton="true" layoutX="525.0" layoutY="108.0" mnemonicParsing="false" onAction="#salvarCadastro" prefHeight="39.0" prefWidth="139.0" styleClass="custem-button-input" stylesheets="@../style/style.css" text="Salvar" textFill="WHITE" />
+      <Button fx:id="voltarButton" cancelButton="true" layoutX="376.0" layoutY="108.0" mnemonicParsing="false" onAction="#voltarTela" prefHeight="39.0" prefWidth="139.0" styleClass="custem-button-input" stylesheets="@../style/style.css" text="Voltar" textFill="WHITE" />
+      <Text layoutX="22.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Empresa">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

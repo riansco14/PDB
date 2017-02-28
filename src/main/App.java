@@ -23,6 +23,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+
+
+    }
+
+
+    public void abrirTelaCliente(Stage primaryStage){
         stage=primaryStage;
         Parent root= null;
         try {
@@ -34,27 +41,14 @@ public class App extends Application {
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
 
-            pegarConexao();
+
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+
+
     }
 
-
-    public void pegarConexao(){
-        try {
-
-
-            EmpresaDAO cadastrar = new EmpresaDAO();
-            cadastrar.inserir(new Empresa("Minha Empresa"));
-
-
-
-        }
-     catch (Throwable ex) {
-        throw new ExceptionInInitializerError(ex+"Meu Erro");
-    }
-    }
 }
