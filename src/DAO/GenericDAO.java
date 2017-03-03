@@ -4,12 +4,13 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class GenericDAO <T> {
+public abstract class GenericDAO <T,ID extends Serializable> {
     private Class<T> classe;
 
     public GenericDAO(){
@@ -20,7 +21,7 @@ public abstract class GenericDAO <T> {
         this.classe = (Class<T>) t2;
     }
 
-    public T localizar(int id) {
+    public T localizar(ID id) {
         T obj=null;
         Session session=HibernateUtil.getSession();
         //session.beginTransaction();
@@ -58,7 +59,7 @@ public abstract class GenericDAO <T> {
         return result;
     }
 
-    public boolean excluir(long id) {
+    public boolean excluir(ID id) {
         boolean result=false;
         Session session=HibernateUtil.getSession();
         Transaction tx=session.getTransaction();

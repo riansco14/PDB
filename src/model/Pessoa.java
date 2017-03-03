@@ -1,5 +1,7 @@
 package model;
 
+import model.Endereco.Endereco;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;

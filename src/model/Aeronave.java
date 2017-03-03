@@ -9,7 +9,19 @@ import javax.persistence.*;
 public class Aeronave {
     private Tripulacao tripulacao;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    public Aeronave build(Tripulacao tripulacao, int numAssentosTotal, int id, String nome, Empresa companhia,
+			int numAssentosEco, int numAssentosExe) {
+		this.tripulacao = tripulacao;
+		this.numAssentosTotal = numAssentosTotal;
+		this.id = id;
+		this.nome = nome;
+		this.companhia = companhia;
+		this.numAssentosEco = numAssentosEco;
+		this.numAssentosExe = numAssentosExe;
+		return this;
+	}
+
+	@OneToOne(cascade = CascadeType.ALL)
     public Tripulacao getTripulacao() {
         return tripulacao;
     }
@@ -18,15 +30,15 @@ public class Aeronave {
         this.tripulacao = tripulacao;
     }
 
-    private int numAssentos;
+    private int numAssentosTotal;
 
     @Basic
-    public int getNumAssentos() {
-        return numAssentos;
+    public int getNumAssentosTotal() {
+        return numAssentosTotal;
     }
 
-    public void setNumAssentos(int numAssentos) {
-        this.numAssentos = numAssentos;
+    public void setNumAssentosTotal(int numAssentos) {
+        this.numAssentosTotal = numAssentos;
     }
 
     private int id;
@@ -64,8 +76,30 @@ public class Aeronave {
 
     public void build(Tripulacao tripulacao, int numAssentos,  String nome, Empresa companhia) {
         this.tripulacao = tripulacao;
-        this.numAssentos = numAssentos;
+        this.numAssentosTotal = numAssentos;
         this.nome = nome;
         this.companhia = companhia;
+    }
+
+    private int numAssentosEco;
+
+    @Basic
+    public int getNumAssentosEco() {
+        return numAssentosEco;
+    }
+
+    public void setNumAssentosEco(int numAssentosEconomico) {
+        this.numAssentosEco = numAssentosEconomico;
+    }
+
+    private int numAssentosExe;
+
+    @Basic
+    public int getNumAssentosExe() {
+        return numAssentosExe;
+    }
+
+    public void setNumAssentosExe(int numAssentosExe) {
+        this.numAssentosExe = numAssentosExe;
     }
 }

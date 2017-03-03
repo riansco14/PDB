@@ -15,16 +15,16 @@
         <mapping class="model.Bilhete"/>
         <mapping class="model.Voo"/>
         <mapping class="model.Aeroporto"/>
-        <mapping class="model.Endereco"/>
+        <mapping class="model.Endereco.Endereco"/>
         <mapping class="model.Aeronave"/>
         <mapping class="model.Tripulacao"/>
         <mapping class="model.Pessoa"/>
         <mapping class="model.Assento"/>
         <mapping class="model.Empresa"/>
         <mapping class="model.Produto_Voo"/>
-        <mapping class="model.City.Cidade"/>
-        <mapping class="model.City.Pais"/>
-        <mapping class="model.City.Estado"/>
+        <mapping class="model.Endereco.Municipio"/>
+        <mapping class="model.Endereco.Pais"/>
+        <mapping class="model.Endereco.Estado"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->

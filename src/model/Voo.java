@@ -1,7 +1,7 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
@@ -12,7 +12,7 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity
 public class Voo {
 
-    public void Construtor( Collection<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
+    public void Construtor( List<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
         this.aeronave = aeronave;
         this.estado = estado;
         this.dataChegada = dataChegada;
@@ -100,14 +100,14 @@ public class Voo {
         this.dataPartida = dataPartida;
     }
 
-    private Collection<Assento> assentos;
+    private List<Assento> assentos;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    public Collection<Assento> getAssentos() {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "voo")
+    public List<Assento> getAssentos() {
         return assentos;
     }
 
-    public void setAssentos(Collection<Assento> assentos) {
+    public void setAssentos(List<Assento> assentos) {
         this.assentos = assentos;
     }
 }

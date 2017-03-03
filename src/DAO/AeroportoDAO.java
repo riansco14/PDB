@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 /**
  * Created by RIAN on 28/12/2016.
  */
-public class AeroportoDAO extends GenericDAO<Aeroporto> {
+public class AeroportoDAO extends GenericDAO<Aeroporto,Long> {
     public Aeroporto localizarPorNome(String id) {
         Aeroporto obj=null;
         Session session=HibernateUtil.getSession();

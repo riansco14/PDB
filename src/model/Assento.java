@@ -44,7 +44,7 @@ public class Assento {
 
     private Bilhete numBilhete;
 
-    @OneToOne(mappedBy = "assento")
+    @OneToOne(optional = false)
     public Bilhete getNumBilhete() {
         return numBilhete;
     }
@@ -62,5 +62,17 @@ public class Assento {
 
     public void setNumAssento(int numAssento) {
         this.numAssento = numAssento;
+    }
+
+
+    private Voo voo;
+
+    @ManyToOne
+    public Voo getVoo() {
+        return voo;
+    }
+
+    public void setVoo(Voo voo) {
+        this.voo = voo;
     }
 }

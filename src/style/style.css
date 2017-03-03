@@ -16,7 +16,7 @@ and open the template in the editor.
 }
 
 .buttonCloseTambah{
-    -fx-background-image: url("/gambar/closePage.png");
+    -fx-background-image: url("/style/closePage.png");
     -fx-background-size: 100% 100%;
 
 }
@@ -270,7 +270,7 @@ and open the template in the editor.
         derive(-fx-base, 80%)
         linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
         derive(-fx-base, 10%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
+        linear-gradient(derive(-fx-base,80%), derive(-fx-base,-10%)),
         /* Outer border: */
         transparent -fx-table-header-border-color -fx-table-header-border-color -fx-table-header-border-color;
     -fx-border-insets: 0 1 1 1, 0 0 0 0;
@@ -368,17 +368,17 @@ and open the template in the editor.
     -fx-font-size: 1.083333em; /* 13pt - 1 more than the default font */
     -fx-size: 25;
     -fx-border-style: solid;
-    -fx-border-color:
-        /*
-          Inner border: we have different colours along the top, right, bottom and left.
-          Refer to RT-12298 for the spec.
-        */
-        derive(-fx-base, 80%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
-        derive(-fx-base, 10%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* Outer border: */
-        transparent -fx-table-header-border-color -fx-table-header-border-color transparent;
+    /*-fx-border-color:*/
+        /*!**/
+          /*Inner border: we have different colours along the top, right, bottom and left.*/
+          /*Refer to RT-12298 for the spec.*/
+        /**!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* Outer border: *!*/
+        /*transparent -fx-table-header-border-color -fx-table-header-border-color transparent;*/
     -fx-border-insets: 0 1 1 0, 0 0 0 0;
     -fx-border-width: 0.083333em, 0.083333em;
 }
@@ -387,17 +387,17 @@ and open the template in the editor.
 .tree-table-view .filler {
     -fx-size: 25;
     -fx-border-style: solid;
-    -fx-border-color:
-        /*
-          Inner border: we have different colours along the top, right, bottom and left.
-          Refer to RT-12298 for the spec.
-        */
-        derive(-fx-base, 80%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
-        derive(-fx-base, 10%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* Outer border: */
-        transparent transparent -fx-table-header-border-color transparent;
+    /*-fx-border-color:*/
+        /*!**/
+          /*Inner border: we have different colours along the top, right, bottom and left.*/
+          /*Refer to RT-12298 for the spec.*/
+        /**!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* Outer border: *!*/
+        /*transparent transparent -fx-table-header-border-color transparent;*/
     -fx-border-insets: 0 0 1 0, 0 0 0 0;
     -fx-border-width: 0.083333em, 0.083333em 0 0.083333em 0.083333em;
 }
@@ -437,14 +437,14 @@ and open the template in the editor.
 .tree-table-view > .column-header-background > .show-hide-columns-button{
     -fx-background-color: -fx-body-color;
 
-    -fx-border-color:
-        /* inner border: A copy of the inner border used above in the general column header area. */
-        derive(-fx-base, 80%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        derive(-fx-base, 10%)
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* outer border: Slightly different to the above*/
-        transparent transparent -fx-table-header-border-color -fx-table-header-border-color;
+    /*-fx-border-color:*/
+        /*!* inner border: A copy of the inner border used above in the general column header area. *!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* outer border: Slightly different to the above*!*/
+        /*transparent transparent -fx-table-header-border-color -fx-table-header-border-color;*/
     -fx-border-insets: 0 0 0 1, 0 0 0 0;
 }
 
@@ -503,6 +503,8 @@ and open the template in the editor.
 {
     -fx-tab-min-width:180px;
     -fx-tab-max-height: inherit;
+    -fx-alignment: center;
+
 }
 
 .tab{

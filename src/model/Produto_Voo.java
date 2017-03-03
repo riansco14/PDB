@@ -1,7 +1,7 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 /**
@@ -66,14 +66,14 @@ public class Produto_Voo {
 
     private Date dataPartida;
 
-    private Collection<Voo> trechos;
+    private List<Voo> trechos;
 
     @OneToMany
-    public Collection<Voo> getTrechos() {
+    public List<Voo> getTrechos() {
         return trechos;
     }
 
-    public void setTrechos(Collection<Voo> trechos) {
+    public void setTrechos(List<Voo> trechos) {
         this.trechos = trechos;
     }
 
@@ -86,5 +86,27 @@ public class Produto_Voo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    private Aeroporto origem;
+
+    @OneToOne(optional = false)
+    public Aeroporto getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(Aeroporto origem) {
+        this.origem = origem;
+    }
+
+    private Aeroporto destino;
+
+    @OneToOne(optional = false)
+    public Aeroporto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeroporto destino) {
+        this.destino = destino;
     }
 }

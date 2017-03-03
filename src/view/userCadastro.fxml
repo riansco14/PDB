@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.GerenciadorTelaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.GerenciadorTelaController">
    <children>
       <SplitPane dividerPositions="0.5" focusTraversable="true" layoutY="-7.0" orientation="VERTICAL" prefHeight="657.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
          <items>
             <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="104.0" prefWidth="998.0" style="-fx-background-image: url(&quot;/gambar/header.gif&quot;); -fx-background-size: 100% 100%;" SplitPane.resizableWithParent="false">
                <children>
-                  <Label contentDisplay="CENTER" layoutX="40.0" layoutY="23.0" text="Guia de Cadastramento" textFill="#046272">
+                  <Label contentDisplay="CENTER" layoutX="40.0" layoutY="23.0" text="Guia de Cadastro" textFill="#046272">
                      <font>
                         <Font name="Gill Sans MT" size="40.0" />
                      </font>
@@ -25,26 +33,233 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="676.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="431.0" prefWidth="724.0">
                <children>
-                  <SplitPane focusTraversable="true" layoutX="602.0" layoutY="48.0" prefHeight="525.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <items>
-                        <AnchorPane prefHeight="693.0" prefWidth="850.0">
-                           <children>
-                              <VBox layoutX="161.0" layoutY="108.0" prefHeight="233.0" prefWidth="354.0" spacing="20.0">
+                  <TabPane prefHeight="459.0" prefWidth="726.0" style="-fx-tab-min-width: 220;" stylesheets="@../style/style.css" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="DADOS PESSOAIS">
+                           <content>
+                              <AnchorPane prefHeight="693.0" prefWidth="850.0" style="-fx-background-color: derive(#2A5058, 0%);">
                                  <children>
-                                    <TextField fx:id="fieldCpf" />
-                                    <TextField fx:id="fieldNome" />
-                                    <TextField fx:id="fieldEmail" alignment="CENTER" />
-                                    <TextField fx:id="fieldTelefone" />
-                                    <PasswordField fx:id="fieldPassword" />
-                                    <PasswordField fx:id="fieldPasswordTwo" />
+                                    <GridPane layoutX="145.0" layoutY="79.0" prefHeight="206.0" prefWidth="436.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="157.0" />
+                                          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="279.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="fieldNome" prefHeight="25.0" prefWidth="285.0" GridPane.columnIndex="1" />
+                                          <TextField fx:id="fieldCpf" prefHeight="25.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="fieldEmail" alignment="CENTER" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="fieldTelefone" prefHeight="25.0" prefWidth="112.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <PasswordField fx:id="fieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <PasswordField fx:id="fieldPasswordTwo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label text="Nome:" textFill="WHITE">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Email:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Telefone:" textFill="WHITE" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Senha:" textFill="WHITE" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Confirmar senha:" textFill="WHITE" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="CPF:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                    <Button layoutX="498.0" layoutY="361.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
                                  </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                     </items>
-                  </SplitPane>
+                              </AnchorPane>
+                           </content>
+                      </Tab>
+                      <Tab text="ENDEREÇOS">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: derive(#2A5058, 0%);">
+                                 <children>
+                                    <GridPane layoutX="101.0" layoutY="30.0" prefHeight="253.0" prefWidth="447.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="157.0" />
+                                          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="279.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="fieldCEP" alignment="CENTER" prefHeight="25.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="fieldBairro" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="fieldRua" prefHeight="25.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="fieldComplemento" prefHeight="25.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <Label text="Bairro:" textFill="WHITE" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="CEP:" textFill="WHITE" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Complemento:" textFill="WHITE" GridPane.rowIndex="6">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Pais:" textFill="WHITE">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="20.0" text="Municipio:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Rua:" textFill="WHITE" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Estado:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" />
+                                          <ComboBox prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="fieldMunicipio" prefHeight="25.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <Button layoutX="283.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: -fx-background-color: linear-gradient(#3399ff, #2A5058);;" styleClass="custem-button-input" text="Adicionar Endereço" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <HBox alignment="CENTER" layoutX="34.0" layoutY="350.0" prefHeight="58.0" prefWidth="449.0" spacing="20.0">
+                                       <children>
+                                          <Label text="Selecione Endereço:" textFill="WHITE">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox prefHeight="25.0" prefWidth="67.0" />
+                                          <Button mnemonicParsing="false" style="-fx-background-color: linear-gradient(#ff2e34, #58070f);" text="Remover Endereço" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Button layoutX="530.0" layoutY="364.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="CONCLUIR">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: derive(#2A5058, 0%);">
+                                 <children>
+                                    <TextField fx:id="fieldConfirmar" layoutX="289.0" layoutY="161.0" />
+                                    <Label layoutX="269.0" layoutY="127.0" text="Insira código de Confirmação" textFill="WHITE">
+                                       <padding>
+                                          <Insets right="15.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="buttonConfirmar" layoutX="301.0" layoutY="211.0" mnemonicParsing="false" styleClass="custem-button-input" text="Confirmar" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
                </children>
             </AnchorPane>
          </items>

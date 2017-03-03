@@ -65,14 +65,5 @@ public class Bilhete {
         this.validade = validade;
     }
 
-    private Assento assento;
 
-    @OneToOne(optional = false)
-    public Assento getAssento() {
-        return assento;
-    }
-
-    public void setAssento(Assento assento) {
-        this.assento = assento;
-    }
 }
