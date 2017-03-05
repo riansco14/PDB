@@ -26,7 +26,10 @@ public class Main2 {
             Assento assento=new Assento();
             assento.setClasse(1);
             assento.setNumBilhete(null);
+            assento.setNumAssento(i);
+            assento.setVoo(voo);
             assentos.add(assento);
+
         }
         voo.setAssentos(assentos);
 
