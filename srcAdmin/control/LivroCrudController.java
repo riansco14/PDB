@@ -1,30 +1,20 @@
 package control;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Optional;
-import java.util.ResourceBundle;
-
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.cell.PropertyValueFactory;
-import util.Dialogs;
 
-public class LivroCrudController implements Initializable {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class LivroCrudController {
+/*
 	@FXML
 	TableView<LivroPropriety> tabela;
 
@@ -67,7 +57,7 @@ public class LivroCrudController implements Initializable {
 	}
 	@FXML
 	public void actionDeletar(ActionEvent event) {
-//		if(Dialogs.showConfirmation("Confirmação", "Escolha uma opção", "Deseja Excluir esse Livro ?")){
+//		if(Dialogs.showConfirmation("Confirmaï¿½ï¿½o", "Escolha uma opï¿½ï¿½o", "Deseja Excluir esse Livro ?")){
 //			String isbn=tabela.getSelectionModel().getSelectedItem().getIsbn();
 		
 			
@@ -100,5 +90,5 @@ public class LivroCrudController implements Initializable {
 
 
 
-
+*/
 }

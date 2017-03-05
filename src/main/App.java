@@ -18,8 +18,8 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        EmpresaDAO empresa=new EmpresaDAO();
-        empresa.inserir(new Empresa());
+//        EmpresaDAO empresa=new EmpresaDAO();
+//        empresa.inserir(new Empresa());
     }
 
     @Override

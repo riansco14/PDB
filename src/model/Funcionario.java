@@ -5,7 +5,7 @@ import model.Endereco.Endereco;
 import javax.persistence.Basic;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by RIAN on 10/11/2016.
@@ -37,7 +37,7 @@ public class Funcionario extends Pessoa {
         this.contaCorrente = contaCorrente;
     }
 
-    public Funcionario construtor(String cargo, String contaCorrente, Collection<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
+    public Funcionario construtor(String cargo, String contaCorrente, List<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
         this.setEnderecos(enderecos);
         this.setCpf(cpf);
         this.setCargo(cargo);

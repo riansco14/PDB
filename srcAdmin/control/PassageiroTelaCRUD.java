@@ -1,12 +1,6 @@
 package control;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import DAO.PassageiroDAO;
-import control.PassageiroTelaCRUD.PassageiroPropriety;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -20,6 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Passageiro;
 import util.Dialogs;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class PassageiroTelaCRUD implements Initializable{
 
@@ -59,13 +57,13 @@ public class PassageiroTelaCRUD implements Initializable{
     
     @FXML
     void actionDeletar(ActionEvent event) {
-    	if(Dialogs.showConfirmation("Confirmação", "Escolha uma opção", "Deseja Excluir essa Passageiro ?")){
+    	if(Dialogs.showConfirmation("Confirmaï¿½ï¿½o", "Escolha uma opï¿½ï¿½o", "Deseja Excluir essa Passageiro ?")){
     		Long id=tabela.getSelectionModel().getSelectedItem().getCpf();
     		
     		if(new PassageiroDAO().excluir(id))
-    			Dialogs.showInformation("Transação realizada com sucesso", "Informação", "Livro Excluido com sucesso");
+    			Dialogs.showInformation("Transaï¿½ï¿½o realizada com sucesso", "Informaï¿½ï¿½o", "Livro Excluido com sucesso");
 			else
-				Dialogs.showError("Houve algum problema na Transação", "Error", "Seu Livro não foi excluido");
+				Dialogs.showError("Houve algum problema na Transaï¿½ï¿½o", "Error", "Seu Livro nï¿½o foi excluido");
 
     	}
     }

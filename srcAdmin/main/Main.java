@@ -1,29 +1,20 @@
 
 package main;
 
-import java.io.IOException;
-
-import DAO.AeronaveDAO;
 import DAO.PassageiroDAO;
-import javafx.animation.KeyValue;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.Aeronave;
-import model.Empresa;
 import model.Passageiro;
-import model.Tripulacao;
 import util.Location;
+
+import java.io.IOException;
 
 public class Main extends Application {
 	public static Stage stage;
@@ -63,13 +54,13 @@ public class Main extends Application {
     	aeronave.setNumAssentosTotal(10);
     	aeronave.setTripulacao(new Tripulacao());
     	
-    	aeronaveDAO.inserir(aeronave);*/
+    	aeronaveDAO.inserir(aeronave);
     	
     	Passageiro passageiro=new Passageiro();
     	passageiro.setCpf(123);
     	passageiro.setNome("Markin");
     	
-    	new PassageiroDAO().inserir(passageiro);
+    	new PassageiroDAO().inserir(passageiro);*/
     	
         launch(args);
     }

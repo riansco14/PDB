@@ -1,16 +1,5 @@
 package control;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Set;
-
-import DAO.UsuarioDAO;
-import model.Categoria;
-import model.Editora;
-import model.Livro;
-import negocio.BibliotecaNegocio;
-import util.Dialogs;
-import util.ValidationField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,9 +7,14 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import util.Dialogs;
+import util.ValidationField;
 
-public class LivroCadastrarController implements Initializable{
-	@FXML TextField fieldISBN;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LivroCadastrarController {
+/*	@FXML TextField fieldISBN;
 	@FXML TextField fieldTitle;
 	@FXML TextField fieldAutor;
 	@FXML TextField fieldEditora;
@@ -59,10 +53,10 @@ public class LivroCadastrarController implements Initializable{
 		
 		
 		 if(new BibliotecaNegocio().inserirLivro(livro, editora))
-			   Dialogs.showInformation("Transação realizada com sucesso", "Informação", "Livro inserido com sucesso");
+			   Dialogs.showInformation("Transaï¿½ï¿½o realizada com sucesso", "Informaï¿½ï¿½o", "Livro inserido com sucesso");
 		   else 
-			   Dialogs.showError("Houve algum problema na Transação", "Error", "Seu Livro não foi inserido");
+			   Dialogs.showError("Houve algum problema na Transaï¿½ï¿½o", "Error", "Seu Livro nï¿½o foi inserido");
 		
 	}
-
+*/
 }

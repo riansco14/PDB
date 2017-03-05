@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.GerenciadorTelaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.UserCadastroController">
    <children>
       <SplitPane dividerPositions="0.5" focusTraversable="true" layoutY="-7.0" orientation="VERTICAL" prefHeight="657.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
          <items>
@@ -35,7 +35,7 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="431.0" prefWidth="724.0">
                <children>
-                  <TabPane prefHeight="459.0" prefWidth="726.0" style="-fx-tab-min-width: 220;" stylesheets="@../style/style.css" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane fx:id="tabPane" prefHeight="459.0" prefWidth="726.0" style="-fx-tab-min-width: 220;" stylesheets="@../style/style.css" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="DADOS PESSOAIS">
                            <content>
@@ -111,7 +111,7 @@
                                           </Label>
                                        </children>
                                     </GridPane>
-                                    <Button layoutX="498.0" layoutY="361.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
+                                    <Button layoutX="498.0" layoutY="361.0" mnemonicParsing="false" onAction="#actionButtonProxDadosPessoais" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -120,7 +120,7 @@
                               </AnchorPane>
                            </content>
                       </Tab>
-                      <Tab text="ENDEREÇOS">
+                      <Tab fx:id="tabEnderecos" disable="true" text="ENDEREÇOS">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: derive(#2A5058, 0%);">
                                  <children>
@@ -137,6 +137,7 @@
                                           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
                                           <TextField fx:id="fieldCEP" alignment="CENTER" prefHeight="25.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -199,9 +200,18 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" />
-                                          <ComboBox prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <ComboBox fx:id="fieldMunicipio" prefHeight="25.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ComboBox fx:id="boxPais" onAction="#actionBoxPais" prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" />
+                                          <ComboBox fx:id="boxEstado" disable="true" onAction="#actionBoxEstado" prefHeight="25.0" prefWidth="209.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="boxMunicipio" disable="true" prefHeight="25.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Numero:" textFill="WHITE" GridPane.rowIndex="7">
+                                             <padding>
+                                                <Insets right="15.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldNumero" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                        </children>
                                     </GridPane>
                                     <Button layoutX="283.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: -fx-background-color: linear-gradient(#3399ff, #2A5058);;" styleClass="custem-button-input" text="Adicionar Endereço" textFill="WHITE">
@@ -219,7 +229,7 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox prefHeight="25.0" prefWidth="67.0" />
+                                          <ComboBox fx:id="boxArrayEnderecos" prefHeight="25.0" prefWidth="67.0" />
                                           <Button mnemonicParsing="false" style="-fx-background-color: linear-gradient(#ff2e34, #58070f);" text="Remover Endereço" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="13.0" />
@@ -227,7 +237,7 @@
                                           </Button>
                                        </children>
                                     </HBox>
-                                    <Button layoutX="530.0" layoutY="364.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
+                                    <Button layoutX="530.0" layoutY="364.0" mnemonicParsing="false" onAction="#actionButtonProxEnderecos" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" text="Próximo" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -236,7 +246,7 @@
                               </AnchorPane>
                         </content>
                       </Tab>
-                        <Tab text="CONCLUIR">
+                        <Tab disable="true" text="CONCLUIR">
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: derive(#2A5058, 0%);">
                                  <children>
@@ -249,7 +259,7 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="buttonConfirmar" layoutX="301.0" layoutY="211.0" mnemonicParsing="false" styleClass="custem-button-input" text="Confirmar" textFill="WHITE">
+                                    <Button fx:id="buttonConfirmar" layoutX="301.0" layoutY="211.0" mnemonicParsing="false" onAction="#actionButtonConfirmar" styleClass="custem-button-input" text="Confirmar" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="20.0" />
                                        </font>

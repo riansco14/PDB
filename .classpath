@@ -14,5 +14,11 @@
 	<classpathentry kind="lib" path="lib/postgresql-9.4.1211.jre7.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.6.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/jasypt-1.9.2-lite.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/jasypt-1.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/jasypt-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/jasypt-hibernate3-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/hibernateEncrypt/jasypt-hibernate3-1.9.2-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

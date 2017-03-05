@@ -1,36 +1,9 @@
 
 package control;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
-import App.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonBar.ButtonData;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import util.Dialogs;
-import util.Location;
-
-public class GerenciadorTelaController implements Initializable{
+public class GerenciadorTelaControllesr {
+	/*
     @FXML     private StackPane workspace;
     @FXML     private Label lblAdmin;
     @FXML     private ListView<String> listViewLivro;
@@ -89,7 +62,7 @@ public class GerenciadorTelaController implements Initializable{
     private void menuItemExit(ActionEvent event) {
     	Stage stage =(Stage) workspace.getScene().getWindow();
     	
-    	if(Dialogs.showConfirmation("Confirmação", "Deseja sair ? ", "Clique em OK se quiser sair"))
+    	if(Dialogs.showConfirmation("Confirmaï¿½ï¿½o", "Deseja sair ? ", "Clique em OK se quiser sair"))
     		stage.close();
     }
     
@@ -147,5 +120,5 @@ public class GerenciadorTelaController implements Initializable{
     }
     
     
-    
+    */
 }

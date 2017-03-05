@@ -6,7 +6,8 @@ import model.Voo;
  * Created by RIAN on 28/12/2016.
  */
 public class VooDAO extends GenericDAO<Voo,Integer> {
-   /* public static List<Voo> listarPorCidadeOrigem(String cidadeOrigem) {
+    /*
+    public static List<Voo> listarPorCidadeOrigem(String cidadeOrigem) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Voo.class);
@@ -37,20 +38,9 @@ public class VooDAO extends GenericDAO<Voo,Integer> {
         session.close();
         return voos;
     }
-
-    public static List<Voo> listarVoosCompleto2(Date data) {
-        Session session = HibernateUtil.getSession();
-        session.beginTransaction();
-        Criteria criteria = session.createCriteria(Voo.class);
+        */
 
 
-        criteria.createAlias("origem", "aeroportoOrigemAlias")
-                .createAlias("aeroportoAlias.endereco", "enderecoOrigemAlias")
-
-        List<Voo> voos = criteria.list();
-        session.close();
-        return voos;
-    }*/
 
 }
 

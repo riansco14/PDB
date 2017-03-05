@@ -6,19 +6,16 @@ import model.Endereco.Endereco;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by RIAN on 10/01/2017.
  */
 public class Main2 {
     public static void main(String[] args) {
+    	VooDAO dao=new VooDAO();
+    	dao.inserir(popularVoo());
+    	
 
-        VooDAO vooDAO=new VooDAO();
-        vooDAO.inserir(popularVoo());
-        Voo voo=vooDAO.localizar(23);
-
-        System.out.println(voo.getAssentos().size());
 
     }
     public static Voo popularVoo(){
@@ -28,6 +25,7 @@ public class Main2 {
         for (int i=0;i<10;i++){
             Assento assento=new Assento();
             assento.setClasse(1);
+            assento.setNumBilhete(null);
             assentos.add(assento);
         }
         voo.setAssentos(assentos);
@@ -77,8 +75,7 @@ public class Main2 {
         Funcionario funcionario=new Funcionario();
         Collection<Endereco> enderecos=new ArrayList<>();
     //    enderecos.add(new Endereco().build("Adress","Adress","Adress","Adress","Adress",10));
-        long randomNum = ThreadLocalRandom.current().nextInt(10000, 99999);
-        funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
+     //   funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
         return funcionario;
     }
 

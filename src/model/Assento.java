@@ -44,7 +44,8 @@ public class Assento {
 
     private Bilhete numBilhete;
 
-    @OneToOne(optional = false)
+    @OneToOne(optional = true)
+    @Column(nullable=true)
     public Bilhete getNumBilhete() {
         return numBilhete;
     }
