@@ -20,7 +20,7 @@ public class Criptografia {
 
     public static boolean compararSenhas(String senha,String senhaComparar) throws NoSuchAlgorithmException {
 
-        if (gerarMD5(senha).equals(gerarMD5(senhaComparar)))
+        if (senha.equals(gerarMD5(senhaComparar)))
             return true;
         else
             return false;
