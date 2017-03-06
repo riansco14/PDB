@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import negocio.AeronaveNegocio;
 import util.Dialogs;
 import util.ExceptionGeneric;
+import util.ValidationField;
 
 public class AeronaveTelaInsert {
 
@@ -47,16 +48,18 @@ public class AeronaveTelaInsert {
     void buttonInserir(ActionEvent event) {
         AeronaveNegocio negocio=new AeronaveNegocio();
         try {
+            ValidationField.isEmptyAllFields(fieldNome,fieldNumAEco,fieldNumAExe,fieldNumATotal);
             negocio.criarAeronave(fieldNome.getText(),new Integer(fieldNumAEco.getText()),new Integer(fieldNumAExe.getText())
                     ,new Integer(fieldNumATotal.getText()),idCompanhia,idTripulacao);
         } catch (ExceptionGeneric exceptionGeneric) {
             Dialogs.showError(exceptionGeneric.getMessage(),exceptionGeneric.getMessage(),"");
         }
+
     }
     @FXML
     void buttonTripulacao(ActionEvent event) {
         idTripulacao=new Integer(Dialogs.showInput("Insira o ID da tripulação","Insira o ID da tripulação",""));
-        labelEmpresa.setText("ID:"+idTripulacao);
+        labelTripulacao.setText("ID:"+idTripulacao);
     }
     @FXML
     void buttonEmpresa(ActionEvent event) {

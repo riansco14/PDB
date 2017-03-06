@@ -21,7 +21,7 @@ public class Aeronave {
 		return this;
 	}
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
     public Tripulacao getTripulacao() {
         return tripulacao;
     }
@@ -43,8 +43,8 @@ public class Aeronave {
 
     private int id;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -66,7 +66,7 @@ public class Aeronave {
 
     private Empresa companhia;
 
-    @OneToOne(optional = false)
+    @OneToOne(cascade = CascadeType.PERSIST)
     public Empresa getCompanhia() {
         return companhia;
     }

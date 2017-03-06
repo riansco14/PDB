@@ -85,7 +85,7 @@ public abstract class GenericDAO <T,ID extends Serializable> {
 
         try {
             tx.begin();
-            session.update(obj);
+            session.merge(obj);
             tx.commit();
             result=true;
         } catch (Exception e) {

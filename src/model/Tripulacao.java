@@ -10,7 +10,7 @@ import java.util.List;
 public class Tripulacao {
     private List<Funcionario> funcionarios;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
@@ -21,8 +21,8 @@ public class Tripulacao {
 
     private int id;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

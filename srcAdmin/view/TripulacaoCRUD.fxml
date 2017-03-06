@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,11 +12,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.TripulacaoTelaCRUD">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="725.0" styleClass="paneFundo" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.TripulacaoTelaCRUD">
    <children>
       <Group layoutX="-1.0" layoutY="71.0">
          <children>
-            <TableView fx:id="tabela" editable="true" layoutX="33.0" layoutY="4.0" onMouseClicked="#actionClicked" prefHeight="152.0" prefWidth="641.0" stylesheets="@../../src/style/style.css">
+            <TableView fx:id="tabela" editable="true" layoutX="33.0" layoutY="4.0" onMouseClicked="#actionClicked" prefHeight="152.0" prefWidth="641.0">
                <columns>
                   <TableColumn fx:id="colID" prefWidth="89.0" resizable="false" styleClass="table-cell" text="ID" />
                   <TableColumn fx:id="colDescricao" prefWidth="234.0" styleClass="table-cell" text="Descricao" />
@@ -23,10 +26,14 @@
             </TableView>
             <HBox layoutX="34.0" layoutY="164.0" spacing="200.0">
                <children>
-                  <Button layoutX="34.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionDeletar" prefHeight="31.0" prefWidth="74.0" style="-fx-text-fill: white;" styleClass="custem-button-input" text="Deletar">
+                  <Button layoutX="34.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionDeletar" prefHeight="31.0" prefWidth="74.0" style="-fx-text-fill: white;" text="Deletar">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="custem-button-input" />
+                        <String fx:value="labelDiferente" />
+                     </styleClass>
                   </Button>
                   <Button layoutX="265.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionSearch" prefHeight="31.0" prefWidth="74.0" style="-fx-text-fill: white;" styleClass="custem-button-input" text="Pesquisar">
                      <font>
@@ -38,14 +45,60 @@
             <TextField fx:id="fieldSearch" layoutX="395.0" layoutY="167.0" prefHeight="25.0" prefWidth="280.0" promptText="Pesquisa" />
             <Region layoutX="34.0" layoutY="-14.0" prefHeight="16.0" prefWidth="677.0" />
             <Region layoutX="20.0" layoutY="2.0" prefHeight="386.0" prefWidth="12.0" />
-            <TableView fx:id="tabela1" editable="true" layoutX="34.0" layoutY="217.0" prefHeight="122.0" prefWidth="640.0" stylesheets="@../gambar/baju.css">
+            <TableView fx:id="tabela1" editable="true" layoutX="38.0" layoutY="281.0" prefHeight="122.0" prefWidth="640.0">
                <columns>
                   <TableColumn fx:id="colCPF" prefWidth="96.0" resizable="false" text="CPF" />
                   <TableColumn fx:id="colNome" prefWidth="310.0" text="Nome" />
-                  <TableColumn fx:id="colCargo" prefWidth="176.0" text="Cargo" />
+                  <TableColumn fx:id="colCargo" prefWidth="233.0" text="Cargo" />
                </columns>
             </TableView>
+            <Label layoutX="219.0" layoutY="241.0" text="Membros da Tripulação" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </Group>
+      <TableView fx:id="tabela11" editable="true" layoutX="39.0" layoutY="577.0" prefHeight="122.0" prefWidth="640.0">
+         <columns>
+            <TableColumn fx:id="colCPF1" prefWidth="96.0" resizable="false" text="CPF" />
+            <TableColumn fx:id="colNome1" prefWidth="310.0" text="Nome" />
+            <TableColumn fx:id="colCargo1" prefWidth="233.0" text="Cargo" />
+         </columns>
+      </TableView>
+      <Label layoutX="249.0" layoutY="18.0" text="Tripulação CRUD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <HBox layoutX="41.0" layoutY="705.0" prefHeight="31.0" prefWidth="352.0" spacing="120.0">
+         <children>
+            <Button layoutX="34.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionAddFuncionario" prefHeight="31.0" prefWidth="157.0" style="-fx-text-fill: white;" styleClass="custem-button-input" text="Adicionar a Tripulação">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="265.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionSearchFuncionario" prefHeight="31.0" prefWidth="74.0" style="-fx-text-fill: white;" styleClass="custem-button-input" text="Pesquisar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <TextField fx:id="fieldSearchFuncionario" layoutX="402.0" layoutY="708.0" prefHeight="25.0" prefWidth="280.0" promptText="Pesquisa" />
+      <HBox layoutX="108.0" layoutY="480.0" prefHeight="31.0" prefWidth="468.0" spacing="120.0">
+         <children>
+            <Button layoutX="34.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionSalvarTripulacao" prefHeight="31.0" prefWidth="157.0" style="-fx-text-fill: white; -fx-background-color: linear-gradient(#1fe858, #459a5d)(#09b93b, #012808);" styleClass="custem-button-input" text="Salvar Tripulação">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#actionRemoveFuncionario" style="-fx-background-color: linear-gradient(#ff2e34, #58070f);" text="Remover da Tripulação" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
