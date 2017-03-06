@@ -18,5 +18,14 @@ public class Criptografia {
         return String.format("%32x",hash);
     }
 
+    public static boolean compararSenhas(String senha,String senhaComparar) throws NoSuchAlgorithmException {
+
+        if (gerarMD5(senha).equals(gerarMD5(senhaComparar)))
+            return true;
+        else
+            return false;
+
+    }
+
 
 }

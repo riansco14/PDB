@@ -94,7 +94,11 @@ public class AeroportoController implements Initializable {
         cadAeroportoController.getBairroText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().getCidade());
         //cadAeroportoController.getCepText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().get);
         cadAeroportoController.getCidadeText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().getCidade());
-        cadAeroportoController.getUfCombo().getItems().in  (cadAeroportoController.getEnderecoText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().getEstado());
+        cadAeroportoController.getCidadeText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().getCidade());
+        cadAeroportoController.getPaisText().setText(tabela.getSelectionModel().getSelectedItem().getEndereco().getPais());
+        cadAeroportoController.setIdAeroporto(tabela.getSelectionModel().getSelectedItem().getId());
+        cadAeroportoController.setIdEndereco(tabela.getSelectionModel().getSelectedItem().getEndereco().getId());
+
         stage.setScene(new Scene(root));
         stage.showAndWait();
 

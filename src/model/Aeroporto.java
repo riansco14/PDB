@@ -63,6 +63,15 @@ public class Aeroporto {
         this.empresa = empresa;
     }
 
+    public Aeroporto(Long id,Endereco endereco, String nome, String descricao, Empresa empresa) {
+        this.id = id;
+        this.endereco = endereco;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.empresa = empresa;
+    }
+
+
     public Aeroporto(Endereco endereco, String nome, String descricao, Empresa empresa) {
         this.endereco = endereco;
         this.nome = nome;

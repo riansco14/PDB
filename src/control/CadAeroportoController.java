@@ -52,6 +52,9 @@ public class CadAeroportoController implements Initializable {
 
     private String acao;
     private Integer idEmpresa;
+    private int idEndereco;
+
+    private Long idAeroporto;
 
 
     public void limparCampos(){
@@ -83,7 +86,17 @@ public class CadAeroportoController implements Initializable {
             else
             {
 
-                Utils.mensagem("Mensagem para Você.","Operação realizada com sucesso !");
+                Endereco meuEndereco = new Endereco(this.idEndereco,this.enderecoText.getText(), this.paisText.getText(), this.ufCombo.getSelectionModel().getSelectedItem(),
+                        this.cidadeText.getText().toUpperCase(), this.bairroText.getText().toUpperCase(), Integer.valueOf(this.getNumeroText().getText()));
+
+                Aeroporto update = new Aeroporto(this.idAeroporto,meuEndereco,
+                        this.nomeAeroporto.getText(),
+                        this.descricaoAeroporto.getText().toUpperCase(),
+                        new EmpresaDAO().localizar(idEmpresa));
+
+                new AeroportoDAO().update(update);
+
+                Utils.mensagem("Mensagem para Você.","alteração realizada com sucesso !");
                 voltarTela();
             }
 
@@ -188,6 +201,14 @@ public class CadAeroportoController implements Initializable {
         return idEmpresa;
     }
 
+    public int getIdEndereco() {
+        return idEndereco;
+    }
+
+    public void setIdEndereco(int idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
     public void setMeuLabel(Text meuLabel) {
         this.meuLabel = meuLabel;
     }
@@ -246,6 +267,14 @@ public class CadAeroportoController implements Initializable {
 
     public TextField getDescricaoAeroporto() {
         return descricaoAeroporto;
+    }
+
+    public Long getIdAeroporto() {
+        return idAeroporto;
+    }
+
+    public void setIdAeroporto(Long idAeroporto) {
+        this.idAeroporto = idAeroporto;
     }
 
     @FXML
