@@ -1,7 +1,8 @@
 
 package main;
 
-import DAO.PassageiroDAO;
+import DAO.EmpresaDAO;
+import DAO.TripulacaoDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -11,7 +12,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.Passageiro;
+import model.Empresa;
+import model.Tripulacao;
 import util.Location;
 
 import java.io.IOException;
@@ -22,7 +24,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
     	this.stage=stage;
     	
-        Parent root = FXMLLoader.load(getClass().getResource(Location.TELA_PASSAGEIRO_CRUD.toString()));
+        Parent root = FXMLLoader.load(getClass().getResource(Location.TELA_AERONAVE_INSERT.toString()));
         Scene scene = new Scene(root);
      //   scene.getStylesheets().add(Location.ESTILO_CSS.toString());
         stage.setScene(scene);
@@ -33,7 +35,7 @@ public class Main extends Application {
     public static void setSceneAdmin() throws IOException{
     	 Parent root = FXMLLoader.load(Main.class.getResource(Location.TELA_GERENCIADORA.toString()));
          Scene scene = new Scene(root);
-//         scene.getStylesheets().add(Location.ESTILO_CSS.toString());
+         scene.getStylesheets().add(Location.ESTILO_CSS.toString());
          stage.setScene(scene);
          stage.show();   
          
@@ -61,7 +63,9 @@ public class Main extends Application {
     	passageiro.setNome("Markin");
     	
     	new PassageiroDAO().inserir(passageiro);*/
-    	
+
+        new EmpresaDAO().inserir(new Empresa());
+        new TripulacaoDAO().inserir(new Tripulacao());
         launch(args);
     }
     

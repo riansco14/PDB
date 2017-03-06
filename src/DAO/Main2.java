@@ -3,18 +3,15 @@ package DAO;
 import model.*;
 import model.Endereco.Endereco;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 /**
  * Created by RIAN on 10/01/2017.
  */
 public class Main2 {
     public static void main(String[] args) {
-    	VooDAO dao=new VooDAO();
-    	dao.inserir(popularVoo());
-    	
+    	new VooDAO().inserir(popularVoo());
+
 
 
     }
@@ -69,16 +66,17 @@ public class Main2 {
     public static Tripulacao popularTripulacao(){
         Tripulacao tripulacao=new Tripulacao();
         tripulacao.setDescricao("Descricao");
-        Collection<Funcionario> funcionarios=new ArrayList<>();
+        List<Funcionario> funcionarios=new ArrayList<>();
         funcionarios.add(popularFuncionario());
         tripulacao.setFuncionarios(funcionarios);
         return tripulacao;
     }
     public static Funcionario popularFuncionario(){
         Funcionario funcionario=new Funcionario();
-        Collection<Endereco> enderecos=new ArrayList<>();
-    //    enderecos.add(new Endereco().build("Adress","Adress","Adress","Adress","Adress",10));
-     //   funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
+        List<Endereco> enderecos=new ArrayList<>();
+        Long randomNum=new Random().nextLong();
+        //enderecos.add(new Endereco().build("Adress","Adress","Adress","Adress","Adress",10));
+        funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
         return funcionario;
     }
 

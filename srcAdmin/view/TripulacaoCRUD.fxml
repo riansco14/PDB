@@ -10,19 +10,18 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.PassageiroTelaCRUD">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.TripulacaoTelaCRUD">
    <children>
       <Group layoutX="-1.0" layoutY="71.0">
          <children>
-            <TableView fx:id="tabela" editable="true" layoutX="33.0" layoutY="4.0" prefHeight="324.0" prefWidth="666.0" stylesheets="@../../src/style/style.css">
+            <TableView fx:id="tabela" editable="true" layoutX="33.0" layoutY="4.0" onMouseClicked="#actionClicked" prefHeight="152.0" prefWidth="641.0" stylesheets="@../../src/style/style.css">
                <columns>
-                  <TableColumn fx:id="colCPF" prefWidth="73.0" resizable="false" styleClass="table-cell" text="CPF" />
-                  <TableColumn fx:id="colNome" prefWidth="226.0" styleClass="table-cell" text="Nome" />
-                  <TableColumn fx:id="colPassaporte" prefWidth="154.0" styleClass="table-cell" text="Passaporte" />
-                  <TableColumn fx:id="colEmail" prefWidth="212.0" styleClass="table-cell" text="Email" />
+                  <TableColumn fx:id="colID" prefWidth="89.0" resizable="false" styleClass="table-cell" text="ID" />
+                  <TableColumn fx:id="colDescricao" prefWidth="234.0" styleClass="table-cell" text="Descricao" />
+                  <TableColumn fx:id="colHorasVoo" prefWidth="342.0" styleClass="table-cell" text="Horas Voo" />
                </columns>
             </TableView>
-            <HBox layoutX="34.0" layoutY="346.0" spacing="200.0">
+            <HBox layoutX="34.0" layoutY="164.0" spacing="200.0">
                <children>
                   <Button layoutX="34.0" layoutY="366.0" mnemonicParsing="false" onAction="#actionDeletar" prefHeight="31.0" prefWidth="74.0" style="-fx-text-fill: white;" styleClass="custem-button-input" text="Deletar">
                      <font>
@@ -36,9 +35,16 @@
                   </Button>
                </children>
             </HBox>
-            <TextField fx:id="fieldSearch" layoutX="418.0" layoutY="349.0" prefHeight="25.0" prefWidth="280.0" promptText="Pesquisa" />
+            <TextField fx:id="fieldSearch" layoutX="395.0" layoutY="167.0" prefHeight="25.0" prefWidth="280.0" promptText="Pesquisa" />
             <Region layoutX="34.0" layoutY="-14.0" prefHeight="16.0" prefWidth="677.0" />
             <Region layoutX="20.0" layoutY="2.0" prefHeight="386.0" prefWidth="12.0" />
+            <TableView fx:id="tabela1" editable="true" layoutX="34.0" layoutY="217.0" prefHeight="122.0" prefWidth="640.0" stylesheets="@../gambar/baju.css">
+               <columns>
+                  <TableColumn fx:id="colCPF" prefWidth="96.0" resizable="false" text="CPF" />
+                  <TableColumn fx:id="colNome" prefWidth="310.0" text="Nome" />
+                  <TableColumn fx:id="colCargo" prefWidth="176.0" text="Cargo" />
+               </columns>
+            </TableView>
          </children>
       </Group>
    </children>

@@ -5,11 +5,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 public class ValidationField {
-	public static boolean isEmptyAllFields(TextField...fields){
+	public static boolean isEmptyAllFields(TextField...fields) throws ExceptionGeneric {
 		for (TextField textField : fields) {
 			if(textField.getText().length()==0){
-				Dialogs.showInformation("Information", "Campo Vazio", textField.getPromptText());
-				return true;
+				//Dialogs.showInformation("Information", "Campo Vazio", "Por favor preencha todos os campos");
+                throw new ExceptionGeneric(ExceptionGeneric.CAMPO_VAZIO);
 			}
 		}
 		return false;

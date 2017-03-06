@@ -19,7 +19,7 @@
                      <tabs>
                         <Tab text="RESERVAR">
                            <content>
-                              <fx:include source="test2.fxml" />
+                              <fx:include source="includeTelaReservar.fxml" />
                            </content>
                         </Tab>
                         <Tab text="BILHETES">

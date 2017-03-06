@@ -37,7 +37,7 @@ public abstract class GenericDAO <T,ID extends Serializable> {
         session.beginTransaction();
         Criteria criteria=session.createCriteria(classe);
         list=criteria.list();
-        session.close();
+//        session.close();
         return list;
     }
 
@@ -54,7 +54,7 @@ public abstract class GenericDAO <T,ID extends Serializable> {
             e.printStackTrace();
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }
@@ -73,7 +73,7 @@ public abstract class GenericDAO <T,ID extends Serializable> {
         } catch (Exception e) {
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }
@@ -91,7 +91,7 @@ public abstract class GenericDAO <T,ID extends Serializable> {
         } catch (Exception e) {
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }

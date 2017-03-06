@@ -33,7 +33,7 @@ public class Aeroporto {
 
     private long id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public long getId() {
         return id;

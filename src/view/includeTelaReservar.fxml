@@ -6,6 +6,8 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -63,7 +65,28 @@
                               </VBox>
                            </children>
                         </AnchorPane>
-                        <StackPane fx:id="workspace" prefHeight="524.0" prefWidth="785.0" />
+                        <StackPane fx:id="workspace" prefHeight="524.0" prefWidth="785.0">
+                           <children>
+                              <TabPane prefHeight="211.0" prefWidth="349.0" style="-fx-tab-min-width: 240;" stylesheets="@../style/style.css" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="ESCOLHER VOO">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </Tab>
+                                  <Tab text="ESCOLHER ASSENTO">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </Tab>
+                                    <Tab text="CONCLUIR ">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children></StackPane>
                      </items>
                   </SplitPane>
                </children>

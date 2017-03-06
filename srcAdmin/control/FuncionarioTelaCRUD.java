@@ -1,8 +1,6 @@
 package control;
 
-import DAO.PassageiroDAO;
-import javafx.beans.property.SimpleLongProperty;
-import javafx.beans.property.SimpleStringProperty;
+import DAO.FuncionarioDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,55 +10,55 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.Passageiro;
+import model.Funcionario;
 import util.Dialogs;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class PassageiroTelaCRUD implements Initializable{
+public class FuncionarioTelaCRUD implements Initializable{
 
     @FXML
-    private TableView<PassageiroPropriety> tabela;
+    private TableView<Funcionario> tabela;
 
     @FXML
-    private TableColumn<PassageiroPropriety, Integer> colCPF;
+    private TableColumn<Funcionario, Integer> colCPF;
 
     @FXML
-    private TableColumn<PassageiroPropriety, String> colNome;
+    private TableColumn<Funcionario, String> colNome;
 
     @FXML
-    private TableColumn<PassageiroPropriety, String> colPassaporte;
+    private TableColumn<Funcionario, String> colPassaporte;
 
     @FXML
-    private TableColumn<PassageiroPropriety, String> colEmail;
+    private TableColumn<Funcionario, String> colEmail;
 
 
     @FXML
     private TextField fieldSearch;
     
-    ObservableList<PassageiroPropriety> listItens = FXCollections
+    ObservableList<Funcionario> listItens = FXCollections
 			.observableArrayList();
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-    	colCPF.setCellValueFactory(new PropertyValueFactory<PassageiroPropriety, Integer>(
+    	colCPF.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>(
 				"cpf"));
-    	colNome.setCellValueFactory(new PropertyValueFactory<PassageiroPropriety, String>(
+    	colNome.setCellValueFactory(new PropertyValueFactory<Funcionario, String>(
 				"nome"));
-    	colPassaporte.setCellValueFactory(new PropertyValueFactory<PassageiroPropriety, String>(
+    	colPassaporte.setCellValueFactory(new PropertyValueFactory<Funcionario, String>(
 				"passaporte"));
-    	colEmail.setCellValueFactory(new PropertyValueFactory<PassageiroPropriety, String>(
+    	colEmail.setCellValueFactory(new PropertyValueFactory<Funcionario, String>(
 				"email"));
 	}
     
     @FXML
     void actionDeletar(ActionEvent event) {
-    	if(Dialogs.showConfirmation("Confirmação", "Escolha uma op��o", "Deseja Excluir essa Passageiro ?")){
+    	if(Dialogs.showConfirmation("Confirma��o", "Escolha uma op��o", "Deseja Excluir essa Passageiro ?")){
     		Long id=tabela.getSelectionModel().getSelectedItem().getCpf();
     		
-    		if(new PassageiroDAO().excluir(id))
+    		if(new FuncionarioDAO().excluir(id))
     			Dialogs.showInformation("Transa��o realizada com sucesso", "Informa��o", "Livro Excluido com sucesso");
 			else
 				Dialogs.showError("Houve algum problema na Transa��o", "Error", "Seu Livro n�o foi excluido");
@@ -70,8 +68,8 @@ public class PassageiroTelaCRUD implements Initializable{
 
     @FXML
     void actionSearch(ActionEvent event) {
-		List<Passageiro> pessoas = null; 
-		PassageiroDAO dao=new PassageiroDAO();
+		List<Funcionario> pessoas = null;
+        FuncionarioDAO dao=new FuncionarioDAO();
 		listItens.clear();
 		
 		if(fieldSearch.getText().length()==0){
@@ -80,19 +78,19 @@ public class PassageiroTelaCRUD implements Initializable{
 		else{
 			listItens.clear();
 			
-			pessoas=dao.localizarPassageiros(fieldSearch.getText());
+			//pessoas=dao.localizarPassageiros(fieldSearch.getText());
 		}
 		
 		if (pessoas != null && pessoas.size() != 0) {
 
-			for (Passageiro l : pessoas) {
+			for (Funcionario l : pessoas) {
 
-				listItens.add(new PassageiroPropriety(l));
+				listItens.add(l);
 			}
 		}
 		tabela.setItems(listItens);
     }
-    
+    /*
     public class PassageiroPropriety{
     	private SimpleLongProperty cpf;
     	private SimpleStringProperty nome;
@@ -134,5 +132,6 @@ public class PassageiroTelaCRUD implements Initializable{
     	
     	
     }
+    */
 
 }
