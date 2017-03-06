@@ -62,4 +62,14 @@ public class Aeroporto {
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
+
+    public Aeroporto(Endereco endereco, String nome, String descricao, Empresa empresa) {
+        this.endereco = endereco;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.empresa = empresa;
+    }
+
+    public Aeroporto() {
+    }
 }

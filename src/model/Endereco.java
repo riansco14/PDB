@@ -86,4 +86,18 @@ public class Endereco {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+
+
+    public Endereco(String rua, String pais, String estado, String cidade, String bairro, int numero) {
+        this.rua = rua;
+        this.pais = pais;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.numero = numero;
+    }
+
+    public Endereco() {
+    }
 }

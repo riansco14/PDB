@@ -33,19 +33,14 @@ public class Utils {
 
     @Contract(value = "_, _ -> true", pure = true)
     public static boolean pergunta(String titulo, String pergunta){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,pergunta,ButtonType.YES,ButtonType.NO);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(pergunta);
 
-        ButtonType buttonSim = new ButtonType("Sim");
-        ButtonType buttonNao = new ButtonType("Não");
+        alert.showAndWait();
 
-        alert.getButtonTypes().addAll(buttonSim,buttonNao);
-
-        Optional<ButtonType> resultado = alert.showAndWait();
-
-            if (resultado.get() == buttonSim)
+            if (alert.getResult() == ButtonType.YES)
                 return true;
             else
                 return false;

@@ -24,6 +24,11 @@ public class Empresa {
         this.nome = nome;
     }
 
+    public Empresa(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -37,5 +42,10 @@ public class Empresa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Empresa(){
+
+
     }
 }

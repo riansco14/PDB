@@ -1,6 +1,10 @@
 package DAO;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import model.Empresa;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -20,7 +24,7 @@ public abstract class GenericDAO <T> {
         this.classe = (Class<T>) t2;
     }
 
-    public T localizar(long id) {
+    public T localizar(Integer id) {
         T obj=null;
         Session session=HibernateUtil.getSession();
         //session.beginTransaction();
@@ -38,6 +42,29 @@ public abstract class GenericDAO <T> {
         list=criteria.list();
         session.close();
         return list;
+    }
+
+
+    public ObservableList<T> exibirTodas() {
+
+        Session session=null;
+
+        try {
+
+            session = HibernateUtil.getSession();
+            Query query = (Query) session.createCriteria(classe);
+            ObservableList<T> list = FXCollections.observableArrayList(query.list());
+            return  list;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            return null;
+        }
+        finally {
+            session.close();
+        }
+
     }
 
     public boolean inserir(T obj) {

@@ -7,12 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Empresa;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,7 +23,10 @@ import java.util.ResourceBundle;
 public class cadEmpresaController implements Initializable {
 
     @FXML
-    private TextField nomeEmpresa;
+    private Text meuLabel;
+
+    @FXML
+    public TextField nomeEmpresa;
 
     @FXML
     private Button salvarButton;
@@ -30,13 +34,33 @@ public class cadEmpresaController implements Initializable {
     @FXML
     private Button voltarButton;
 
+    private String acao;
+    private Integer idEmpresa;
 
+
+    public void limparCampos(){
+        this.nomeEmpresa.clear();
+        this.nomeEmpresa.requestFocus();
+    }
 
     public void salvarCadastro(){
 
         if (!nomeEmpresa.getText().isEmpty()){
-            new EmpresaDAO().inserir(new Empresa(nomeEmpresa.getText().toUpperCase()));
-            Utils.mensagem("Mensagem para Você.","Operação realizada com sucesso !");
+
+            if (this.acao==""){
+
+                new EmpresaDAO().inserir(new Empresa(nomeEmpresa.getText().toUpperCase()));
+                Utils.mensagem("Mensagem para Você.","Operação realizada com sucesso !");
+                limparCampos();
+
+            }
+            else
+            {
+                new EmpresaDAO().update(new Empresa(this.idEmpresa,nomeEmpresa.getText().toUpperCase()));
+                Utils.mensagem("Mensagem para Você.","Operação realizada com sucesso !");
+                voltarTela();
+            }
+
 
         }
         else{
@@ -61,5 +85,21 @@ public class cadEmpresaController implements Initializable {
 
     public TextField getNomeEmpresa() {
         return nomeEmpresa;
+    }
+
+    public Text getMeuLabel(){
+        return this.meuLabel;
+    }
+
+    public String getAcao() {
+        return acao;
+    }
+
+    public void setAcao(String acao) {
+        this.acao = acao;
+    }
+
+    public void setIdEmpresa(Integer idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 }
