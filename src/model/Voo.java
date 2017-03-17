@@ -21,7 +21,7 @@ public class Voo {
     /* ROTA DO VOO*/
     private Aeroporto origem;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     public Aeroporto getOrigem() {
         return origem;
     }
@@ -32,7 +32,7 @@ public class Voo {
 
     private Aeroporto destino;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     public Aeroporto getDestino() {
         return destino;
     }
@@ -44,7 +44,7 @@ public class Voo {
 
     private Aeronave aeronave;
 
-    @OneToOne(cascade = CascadeType.ALL)//(optional = false)
+    @OneToOne//(optional = false)
     public Aeronave getAeronave() {
         return aeronave;
     }

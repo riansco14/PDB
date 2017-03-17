@@ -8,6 +8,8 @@ public class ExceptionGeneric extends Exception {
     public final static String SENHA_INVALIDA = "Esta senha é invalida";
     public final static String EMPRESA_INVALIDA = "Esta empresa/companhia é invalida";
     public final static String TRIPULACAO_INVALIDA = "Esta tripulação é invalida";
+    public final static String AERONAVE_INVALIDA = "Esta aeronave é invalida";
+    public final static String AEROPORTO_INVALIDA = "Esta AEROPORTO é invalida";
     public final static String CAMPO_VAZIO = "Existe algum campo vazio";
 
 

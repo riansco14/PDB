@@ -21,7 +21,7 @@ public class Aeronave {
 		return this;
 	}
 
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
     public Tripulacao getTripulacao() {
         return tripulacao;
     }
@@ -66,7 +66,7 @@ public class Aeronave {
 
     private Empresa companhia;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne
     public Empresa getCompanhia() {
         return companhia;
     }

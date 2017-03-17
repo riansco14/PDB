@@ -25,6 +25,16 @@ public class Endereco implements Serializable {
     @ManyToOne
     private Municipio municipio;
 
+    public Endereco build(String logradouro, String numero, String bairro, String complemento, String cep, Municipio municipio) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.cep = cep;
+        this.municipio = municipio;
+        return this;
+    }
+
     public Endereco() {
         this.municipio = new Municipio();
     }

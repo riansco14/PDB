@@ -1,9 +1,13 @@
 package DAO;
 
+import DAO.Endereco.MunicipioDAO;
 import model.*;
 import model.Endereco.Endereco;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by RIAN on 10/01/2017.
@@ -44,8 +48,8 @@ public class Main2 {
     public  static Aeronave popularAeronave(){
         Aeronave aeronave=new Aeronave();
         aeronave.setNome("Aeromarkin");
-        aeronave.setTripulacao(popularTripulacao());
-        aeronave.setCompanhia(new Empresa().build("Empresa"));
+        aeronave.setTripulacao(new TripulacaoDAO().listar().get(0));
+        aeronave.setCompanhia(new EmpresaDAO().listar().get(0));
         return aeronave;
     }
 /*
@@ -58,7 +62,7 @@ public class Main2 {
     }*/
     public static Aeroporto popularAeroporto(){
         Aeroporto aeroporto=new Aeroporto();
-       // aeroporto.setEndereco(new Endereco().build("Adress","Adress","Adress","Adress","Adress",10));
+        aeroporto.setEndereco(new Endereco().build("Adress","Adress","Adress","Adress","Adress",new MunicipioDAO().localizar(new Long(1100015))));
         aeroporto.setDescricao("setDescricao");
         aeroporto.setEmpresa(new Empresa().build("Empresa"));
         return aeroporto;

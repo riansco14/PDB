@@ -6,6 +6,7 @@ public enum Location {
     TELA_USER_MAIN("/view/userMainTela.fxml"),
 	TELA_AERONAVE_CRUD("/view/AeronaveCRUD.fxml"),
     TELA_AERONAVE_INSERT("/view/AeronaveCreate.fxml"),
+	TELA_PRODUTOVOO_INSERT("/view/PVooInsert.fxml"),
 	TELA_PASSAGEIRO_CRUD("/view/PassageiroCRUD.fxml"),
 	TELA_FUNCIONARIO_CRUD("/view/FuncionarioCRUD.fxml"),
     TELA_TRIPULACAO_CRUD("/view/TripulacaoCRUD.fxml"),

@@ -1,6 +1,7 @@
 
 package main;
 
+import DAO.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Empresa;
+import model.Tripulacao;
 import util.Location;
 
 public class Main extends Application {
@@ -16,7 +19,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
     	this.stage=stage;
     	
-        Parent root = FXMLLoader.load(getClass().getResource(Location.TELA_TRIPULACAO_CRUD.toString()));
+        Parent root = FXMLLoader.load(getClass().getResource(Location.TELA_PRODUTOVOO_INSERT.toString()));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Location.ESTILO_CSS.toString());
         stage.setScene(scene);
@@ -44,8 +47,10 @@ public class Main extends Application {
     	
     	new PassageiroDAO().inserir(passageiro);*/
 
-//        new EmpresaDAO().inserir(new Empresa());
-//        new TripulacaoDAO().inserir(new Tripulacao());
+        new EmpresaDAO().inserir(new Empresa());
+        new TripulacaoDAO().inserir(new Tripulacao());
+        new AeroportoDAO().inserir(Main2.popularAeroporto());
+        new AeronaveDAO().inserir(Main2.popularAeronave());
         launch(args);
     }
     

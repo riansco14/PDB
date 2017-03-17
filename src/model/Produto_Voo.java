@@ -31,39 +31,6 @@ public class Produto_Voo {
         this.valorExecutivo = valorExecutivo;
     }
 
-    private int vagasEconomico;
-
-    @Basic
-    public int getVagasEconomico() {
-        return vagasEconomico;
-    }
-
-    public void setVagasEconomico(int vagasEconomico) {
-        this.vagasEconomico = vagasEconomico;
-    }
-
-    private int vagasExecutivo;
-
-    @Basic
-    public int getVagasExecutivo() {
-        return vagasExecutivo;
-    }
-
-    public void setVagasExecutivo(int vagasExecutivo) {
-        this.vagasExecutivo = vagasExecutivo;
-    }
-
-    private int vagasTotal;
-
-    @Basic
-    public int getVagasTotal() {
-        return vagasTotal;
-    }
-
-    public void setVagasTotal(int vagasTotal) {
-        this.vagasTotal = vagasTotal;
-    }
-
     private Date dataPartida;
 
     private List<Voo> trechos;
@@ -80,6 +47,7 @@ public class Produto_Voo {
     private int id;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -90,7 +58,7 @@ public class Produto_Voo {
 
     private Aeroporto origem;
 
-    @OneToOne(optional = false)
+    @OneToOne
     public Aeroporto getOrigem() {
         return origem;
     }
@@ -101,7 +69,7 @@ public class Produto_Voo {
 
     private Aeroporto destino;
 
-    @OneToOne(optional = false)
+    @OneToOne
     public Aeroporto getDestino() {
         return destino;
     }
