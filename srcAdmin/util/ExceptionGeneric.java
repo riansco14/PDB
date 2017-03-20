@@ -9,7 +9,8 @@ public class ExceptionGeneric extends Exception {
     public final static String EMPRESA_INVALIDA = "Esta empresa/companhia é invalida";
     public final static String TRIPULACAO_INVALIDA = "Esta tripulação é invalida";
     public final static String AERONAVE_INVALIDA = "Esta aeronave é invalida";
-    public final static String AEROPORTO_INVALIDA = "Esta AEROPORTO é invalida";
+    public final static String AEROPORTO_INVALIDA = "Este AEROPORTO é invalido";
+    public final static String VOO_INVALIDA = "Você inseriu um voo invalido";
     public final static String CAMPO_VAZIO = "Existe algum campo vazio";
 
 

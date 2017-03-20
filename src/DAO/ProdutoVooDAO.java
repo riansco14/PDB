@@ -23,7 +23,8 @@ public class ProdutoVooDAO extends GenericDAO<Produto_Voo, Integer>{
                 .createAlias("destino", "AeroportoDestinoAlias")
                 .add(Restrictions.ilike("AeroportoOAlias.nome","%"+origem+"%"))
                 .add(Restrictions.ilike("AeroportoDestinoAlias.nome","%"+destino+"%"))
-                .add(Restrictions.between("trechos.dataChegada",data,data2));
+                .add(Restrictions.between("dataPartida",data,data2))
+        ;
 
 
 
@@ -44,7 +45,8 @@ public class ProdutoVooDAO extends GenericDAO<Produto_Voo, Integer>{
                 .add(Restrictions.ilike("municipioOrigem","%"+destino+"%"))
                 .createAlias("destino.endereco.municipio.nome","municipioDestino")
                 .add(Restrictions.ilike("municipioDestino","%"+destino+"%"))
-                .add(Restrictions.between("trechos.dataChegada",data,data2));
+                .add(Restrictions.between("dataPartida",data,data2))
+        ;
 
         List<Produto_Voo> voos = criteria.list();
         session.close();

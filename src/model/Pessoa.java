@@ -14,7 +14,10 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
 public abstract class Pessoa implements Serializable{
-    public Pessoa build(List<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
+    public Pessoa() {
+    }
+
+    public Pessoa(List<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
         this.enderecos = enderecos;
         this.cpf = cpf;
         this.nome = nome;
@@ -22,7 +25,6 @@ public abstract class Pessoa implements Serializable{
         this.telefone = telefone;
         this.senha = senha;
         this.rg = rg;
-        return this;
     }
 
     private String tipo;

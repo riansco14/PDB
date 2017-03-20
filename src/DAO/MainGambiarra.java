@@ -41,7 +41,7 @@ public class MainGambiarra {
     }*/
   /*
     public static void main(String[] args) {
-        List<Voo> vooList= new VooDAO().listarPorCidadeOrigem("Recife");
+        List<Voo> vooList= new VooDAO().listarAssentosVagosPorIdProduto("Recife");
         for (Voo voo: vooList) {
             System.out.println(voo.getDataChegada().getYear()+"\t");
         }

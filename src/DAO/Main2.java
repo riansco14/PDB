@@ -25,7 +25,7 @@ public class Main2 {
         ArrayList<Assento> assentos=new ArrayList<>();
         for (int i=0;i<10;i++){
             Assento assento=new Assento();
-            assento.setClasse(1);
+//            assento.setClasse(1);
             assento.setNumBilhete(null);
             assento.setNumAssento(i);
             assento.setVoo(voo);
@@ -40,7 +40,6 @@ public class Main2 {
         Date date=new Date(2000,10,10);
         voo.setDataChegada(date);
         voo.setDataPartida(date);
-        voo.setEstado(true);
 
        return voo;
     }
@@ -62,9 +61,9 @@ public class Main2 {
     }*/
     public static Aeroporto popularAeroporto(){
         Aeroporto aeroporto=new Aeroporto();
-        aeroporto.setEndereco(new Endereco().build("Adress","Adress","Adress","Adress","Adress",new MunicipioDAO().localizar(new Long(1100015))));
+        aeroporto.setEndereco(new Endereco("Adress","Adress","Adress","Adress","Adress",new MunicipioDAO().localizar(new Long(1100015))));
         aeroporto.setDescricao("setDescricao");
-        aeroporto.setEmpresa(new Empresa().build("Empresa"));
+//        aeroporto.setEmpresa(new Empresa().build("Empresa"));
         return aeroporto;
     }
     public static Tripulacao popularTripulacao(){
@@ -80,7 +79,7 @@ public class Main2 {
         List<Endereco> enderecos=new ArrayList<>();
         Long randomNum=new Random().nextLong();
         //enderecos.add(new Endereco().build("Adress","Adress","Adress","Adress","Adress",10));
-        funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
+//        funcionario.build(enderecos,randomNum,"nome","email","12312","markin",randomNum);
         return funcionario;
     }
 

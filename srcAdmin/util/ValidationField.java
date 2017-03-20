@@ -4,6 +4,9 @@ import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class ValidationField {
 	public static boolean isEmptyAllFields(TextField...fields) throws ExceptionGeneric {
 		for (TextField textField : fields) {
@@ -38,5 +41,13 @@ public class ValidationField {
         };
         return handler;
 	}
+
+	public static Date getData(int ano,int mes,int dia){
+        Calendar cal = Calendar.getInstance();
+        cal.set(ano,mes-1,dia);
+        Date dateRepresentation = cal.getTime();
+
+        return dateRepresentation;
+    }
 	
 }

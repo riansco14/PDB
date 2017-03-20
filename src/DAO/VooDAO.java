@@ -7,7 +7,7 @@ import model.Voo;
  */
 public class VooDAO extends GenericDAO<Voo,Integer> {
     /*
-    public static List<Voo> listarPorCidadeOrigem(String cidadeOrigem) {
+    public static List<Voo> listarAssentosVagosPorIdProduto(String cidadeOrigem) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Voo.class);

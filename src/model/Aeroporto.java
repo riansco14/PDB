@@ -9,6 +9,16 @@ import javax.persistence.*;
  */
 @Entity
 public class Aeroporto {
+    public Aeroporto() {
+    }
+
+    public Aeroporto(Endereco endereco, String nome, String descricao, Empresa empresa) {
+        this.endereco = endereco;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.empresa = empresa;
+    }
+
     private Endereco endereco;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -56,7 +66,7 @@ public class Aeroporto {
 
     private Empresa empresa;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     public Empresa getEmpresa() {
         return empresa;
     }

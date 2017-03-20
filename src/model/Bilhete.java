@@ -34,7 +34,7 @@ public class Bilhete {
 
     private Produto_Voo produto;
 
-    @OneToOne(optional = false)
+    @OneToOne
     public Produto_Voo getProduto() {
         return produto;
     }

@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 
@@ -12,12 +13,18 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity
 public class Voo {
 
-    public void Construtor( List<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
+    public Voo(Aeroporto origem, Aeroporto destino, Aeronave aeronave, Date dataChegada, Date dataPartida) {
+        this.origem = origem;
+        this.destino = destino;
         this.aeronave = aeronave;
-        this.estado = estado;
+        this.estado = VooEstadoEnum.CONFIRMADO;
         this.dataChegada = dataChegada;
         this.dataPartida = dataPartida;
+        this.assentos=ocuparAssentos();
     }
+
+    public Voo() {}
+
     /* ROTA DO VOO*/
     private Aeroporto origem;
 
@@ -65,14 +72,14 @@ public class Voo {
         this.id = id;
     }
 
-    private boolean estado;
+    private VooEstadoEnum estado;
 
     @Basic
-    public boolean isEstado() {
+    public VooEstadoEnum getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(VooEstadoEnum estado) {
         this.estado = estado;
     }
 
@@ -109,5 +116,21 @@ public class Voo {
 
     public void setAssentos(List<Assento> assentos) {
         this.assentos = assentos;
+    }
+
+    private List<Assento> ocuparAssentos(){
+        List<Assento> assentos=new ArrayList<Assento>();
+        int numAssento=0;
+        for (int i=0;i<this.aeronave.getNumAssentosExe();i++){
+            numAssento++;
+            assentos.add(new Assento(AssentoClasseEnum.EXECUTIVO,false,null,numAssento,this));
+        }
+
+        for (int i=0;i<this.aeronave.getNumAssentosEco();i++){
+            numAssento++;
+            assentos.add(new Assento(AssentoClasseEnum.ECONOMICO,false,null,numAssento,this));
+        }
+
+        return assentos;
     }
 }

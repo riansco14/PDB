@@ -95,4 +95,6 @@ public abstract class GenericDAO <T,ID extends Serializable> {
         }
         return result;
     }
+
+
 }

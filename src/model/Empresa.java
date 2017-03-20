@@ -7,10 +7,12 @@ import javax.persistence.*;
  */
 @Entity
 public class Empresa {
-    public Empresa build(String nome) {
+
+    public Empresa(String nome) {
         this.nome = nome;
-        return this;
     }
+
+    public Empresa() {}
 
     private int id;
 

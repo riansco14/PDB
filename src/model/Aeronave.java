@@ -7,19 +7,21 @@ import javax.persistence.*;
  */
 @Entity
 public class Aeronave {
-    private Tripulacao tripulacao;
 
-    public Aeronave build(Tripulacao tripulacao, int numAssentosTotal, int id, String nome, Empresa companhia,
-			int numAssentosEco, int numAssentosExe) {
+    public Aeronave() {
+    }
+
+    public Aeronave (Tripulacao tripulacao, String nome, Empresa companhia, int numAssentosTotal,
+                     int numAssentosEco, int numAssentosExe) {
 		this.tripulacao = tripulacao;
 		this.numAssentosTotal = numAssentosTotal;
-		this.id = id;
 		this.nome = nome;
 		this.companhia = companhia;
 		this.numAssentosEco = numAssentosEco;
 		this.numAssentosExe = numAssentosExe;
-		return this;
 	}
+
+    private Tripulacao tripulacao;
 
 	@OneToOne
     public Tripulacao getTripulacao() {
@@ -72,13 +74,6 @@ public class Aeronave {
     }
 
     public void setCompanhia(Empresa companhia) {
-        this.companhia = companhia;
-    }
-
-    public void build(Tripulacao tripulacao, int numAssentos,  String nome, Empresa companhia) {
-        this.tripulacao = tripulacao;
-        this.numAssentosTotal = numAssentos;
-        this.nome = nome;
         this.companhia = companhia;
     }
 

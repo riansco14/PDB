@@ -1,8 +1,8 @@
 package model;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by RIAN on 04/02/2017.
@@ -33,9 +33,21 @@ public class Produto_Voo {
 
     private Date dataPartida;
 
+    @Basic
+    public Date getDataPartida() {
+        return dataPartida;
+    }
+
+    public void setDataPartida(Date dataPartida) {
+        this.dataPartida = dataPartida;
+    }
+
     private List<Voo> trechos;
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name="produto_voo_trechos", joinColumns=
+            {@JoinColumn(name="produto_voo_id")}, inverseJoinColumns=
+            {@JoinColumn(name="voos_id")})
     public List<Voo> getTrechos() {
         return trechos;
     }
@@ -76,5 +88,27 @@ public class Produto_Voo {
 
     public void setDestino(Aeroporto destino) {
         this.destino = destino;
+    }
+
+    private Boolean vooComEscala;
+
+    @Basic
+    public Boolean getVooComEscala() {
+        return vooComEscala;
+    }
+
+    public void setVooComEscala(Boolean basic) {
+        this.vooComEscala = basic;
+    }
+
+    private Date dataChegada;
+
+    @Basic
+    public Date getDataChegada() {
+        return dataChegada;
+    }
+
+    public void setDataChegada(Date dataChegada) {
+        this.dataChegada = dataChegada;
     }
 }
