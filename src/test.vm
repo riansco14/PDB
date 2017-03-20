@@ -1,0 +1,28 @@
+public class $nomeClasse{
+#*
+ CRIA TODOS OS ATRIBUTOS DA LISTA
+ *#
+#foreach($var in $listaAtributos)
+    $var.modificadorAcesso $var.tipoClasse $var.nomeObjeto;
+#end
+#*
+
+ CRIA TODOS OS METODOS GET DA LISTA
+
+ *#
+#foreach($var in $listaAtributos)
+    #if($var.modificadorAcesso=="private")
+    public $var.tipoClasse get$var.nomeObjeto.substring(0,1).toUpperCase()$var.nomeObjeto.substring(1).toLowerCase() (){return this.$nomeObjeto.get()};
+    public $var.tipoClasse set$var.nomeObjeto.substring(0,1).toUpperCase()$var.nomeObjeto.substring(1).toLowerCase() ($var.tipoClasse $var.nomeObjeto) {this.$var.nomeObjeto.set($var.nomeObjeto)};
+    #end
+#end
+#*
+
+ CRIA TODOS OS METODOS NORMAIS DA LISTA
+
+ *#
+#foreach($var in $listaMetodos)
+    $var.modificadorAcesso $var.tipoRetorno $var.nomeMetodo (){};
+#end
+
+}

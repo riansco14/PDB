@@ -1,5 +1,7 @@
 package model;
 
+import model.Endereco.Endereco;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +9,16 @@ import javax.persistence.*;
  */
 @Entity
 public class Aeroporto {
+    public Aeroporto() {
+    }
+
+    public Aeroporto(Endereco endereco, String nome, String descricao, Empresa empresa) {
+        this.endereco = endereco;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.empresa = empresa;
+    }
+
     private Endereco endereco;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -31,7 +43,7 @@ public class Aeroporto {
 
     private long id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public long getId() {
         return id;
@@ -54,7 +66,7 @@ public class Aeroporto {
 
     private Empresa empresa;
 
-    @OneToOne(optional = false)
+    @OneToOne
     public Empresa getEmpresa() {
         return empresa;
     }

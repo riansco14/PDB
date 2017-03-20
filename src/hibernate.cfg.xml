@@ -8,21 +8,23 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">root</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
         <mapping class="model.Funcionario"/>
         <mapping class="model.Passageiro"/>
         <mapping class="model.Bilhete"/>
         <mapping class="model.Voo"/>
-        <mapping class="model.Rota"/>
         <mapping class="model.Aeroporto"/>
-        <mapping class="model.Endereco"/>
+        <mapping class="model.Endereco.Endereco"/>
         <mapping class="model.Aeronave"/>
         <mapping class="model.Tripulacao"/>
         <mapping class="model.Pessoa"/>
         <mapping class="model.Assento"/>
         <mapping class="model.Empresa"/>
         <mapping class="model.Produto_Voo"/>
+        <mapping class="model.Endereco.Municipio"/>
+        <mapping class="model.Endereco.Pais"/>
+        <mapping class="model.Endereco.Estado"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->

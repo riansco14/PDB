@@ -1,7 +1,8 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
@@ -12,24 +13,41 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity
 public class Voo {
 
-    public void Construtor(Rota rota, Collection<Voo> trechos, Aeronave aeronave, boolean estado, Date dataChegada, Date dataPartida, double valorEconomico, double valorExecutivo, int vagasEconomico, int vagasExecutivo, int vagasTotal) {
-        this.rota = rota;
+    public Voo(Aeroporto origem, Aeroporto destino, Aeronave aeronave, Date dataChegada, Date dataPartida) {
+        this.origem = origem;
+        this.destino = destino;
         this.aeronave = aeronave;
-        this.estado = estado;
+        this.estado = VooEstadoEnum.CONFIRMADO;
         this.dataChegada = dataChegada;
         this.dataPartida = dataPartida;
+        this.assentos=ocuparAssentos();
     }
 
-    private Rota rota;
+    public Voo() {}
 
-    @OneToOne//(optional = false)
-    public Rota getRota() {
-        return rota;
+    /* ROTA DO VOO*/
+    private Aeroporto origem;
+
+    @OneToOne
+    public Aeroporto getOrigem() {
+        return origem;
     }
 
-    public void setRota(Rota rota) {
-        this.rota = rota;
+    public void setOrigem(Aeroporto oneToOne) {
+        this.origem = oneToOne;
     }
+
+    private Aeroporto destino;
+
+    @OneToOne
+    public Aeroporto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeroporto destino) {
+        this.destino = destino;
+    }
+    /*                                                                                          */
 
     private Aeronave aeronave;
 
@@ -44,7 +62,7 @@ public class Voo {
 
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;
@@ -54,14 +72,14 @@ public class Voo {
         this.id = id;
     }
 
-    private boolean estado;
+    private VooEstadoEnum estado;
 
     @Basic
-    public boolean isEstado() {
+    public VooEstadoEnum getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(VooEstadoEnum estado) {
         this.estado = estado;
     }
 
@@ -89,14 +107,30 @@ public class Voo {
         this.dataPartida = dataPartida;
     }
 
-    private Collection<Assento> assentos;
+    private List<Assento> assentos;
 
-    @OneToMany
-    public Collection<Assento> getAssentos() {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "voo")
+    public List<Assento> getAssentos() {
         return assentos;
     }
 
-    public void setAssentos(Collection<Assento> assentos) {
+    public void setAssentos(List<Assento> assentos) {
         this.assentos = assentos;
+    }
+
+    private List<Assento> ocuparAssentos(){
+        List<Assento> assentos=new ArrayList<Assento>();
+        int numAssento=0;
+        for (int i=0;i<this.aeronave.getNumAssentosExe();i++){
+            numAssento++;
+            assentos.add(new Assento(AssentoClasseEnum.EXECUTIVO,false,null,numAssento,this));
+        }
+
+        for (int i=0;i<this.aeronave.getNumAssentosEco();i++){
+            numAssento++;
+            assentos.add(new Assento(AssentoClasseEnum.ECONOMICO,false,null,numAssento,this));
+        }
+
+        return assentos;
     }
 }

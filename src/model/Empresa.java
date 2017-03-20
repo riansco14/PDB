@@ -1,18 +1,22 @@
 package model;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by RIAN on 10/11/2016.
  */
 @Entity
 public class Empresa {
+
+    public Empresa(String nome) {
+        this.nome = nome;
+    }
+
+    public Empresa() {}
+
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;

@@ -7,9 +7,23 @@ import javax.persistence.*;
  */
 @Entity
 public class Aeronave {
+
+    public Aeronave() {
+    }
+
+    public Aeronave (Tripulacao tripulacao, String nome, Empresa companhia, int numAssentosTotal,
+                     int numAssentosEco, int numAssentosExe) {
+		this.tripulacao = tripulacao;
+		this.numAssentosTotal = numAssentosTotal;
+		this.nome = nome;
+		this.companhia = companhia;
+		this.numAssentosEco = numAssentosEco;
+		this.numAssentosExe = numAssentosExe;
+	}
+
     private Tripulacao tripulacao;
 
-    @OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     public Tripulacao getTripulacao() {
         return tripulacao;
     }
@@ -18,29 +32,21 @@ public class Aeronave {
         this.tripulacao = tripulacao;
     }
 
-    //    @OneToMany
-//    public Collection<Assento> getAssentos() {
-//        return assentos;
-//    }
-//
-//    public void setAssentos(Collection<Assento> assentos) {
-//        this.assentos = assentos;
-//    }
-
-    private int numAssentos;
+    private int numAssentosTotal;
 
     @Basic
-    public int getNumAssentos() {
-        return numAssentos;
+    public int getNumAssentosTotal() {
+        return numAssentosTotal;
     }
 
-    public void setNumAssentos(int numAssentos) {
-        this.numAssentos = numAssentos;
+    public void setNumAssentosTotal(int numAssentos) {
+        this.numAssentosTotal = numAssentos;
     }
 
     private int id;
 
-    @GeneratedValue@Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -62,12 +68,34 @@ public class Aeronave {
 
     private Empresa companhia;
 
-    @OneToOne(optional = false)
+    @OneToOne
     public Empresa getCompanhia() {
         return companhia;
     }
 
     public void setCompanhia(Empresa companhia) {
         this.companhia = companhia;
+    }
+
+    private int numAssentosEco;
+
+    @Basic
+    public int getNumAssentosEco() {
+        return numAssentosEco;
+    }
+
+    public void setNumAssentosEco(int numAssentosEconomico) {
+        this.numAssentosEco = numAssentosEconomico;
+    }
+
+    private int numAssentosExe;
+
+    @Basic
+    public int getNumAssentosExe() {
+        return numAssentosExe;
+    }
+
+    public void setNumAssentosExe(int numAssentosExe) {
+        this.numAssentosExe = numAssentosExe;
     }
 }

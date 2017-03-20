@@ -1,8 +1,10 @@
 package model;
 
+import model.Endereco.Endereco;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by RIAN on 10/11/2016.
@@ -12,6 +14,18 @@ import java.util.Collection;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
 public abstract class Pessoa implements Serializable{
+    public Pessoa() {
+    }
+
+    public Pessoa(List<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
+        this.enderecos = enderecos;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.rg = rg;
+    }
 
     private String tipo;
 
@@ -24,15 +38,15 @@ public abstract class Pessoa implements Serializable{
         this.tipo = tipo;
     }
 
-    private Collection<Endereco> enderecos;
+    private List<Endereco> enderecos;
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    public Collection<Endereco> getEnderecos() {
+    public List<Endereco> getEnderecos() {
         return enderecos;
     }
 
-    public void setEnderecos(Collection<Endereco> enderecos) {
+    public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
 

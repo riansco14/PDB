@@ -4,12 +4,13 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class GenericDAO <T> {
+public abstract class GenericDAO <T,ID extends Serializable> {
     private Class<T> classe;
 
     public GenericDAO(){
@@ -20,12 +21,12 @@ public abstract class GenericDAO <T> {
         this.classe = (Class<T>) t2;
     }
 
-    public T localizar(long id) {
+    public T localizar(ID id) {
         T obj=null;
         Session session=HibernateUtil.getSession();
         //session.beginTransaction();
         obj=(T)session.get(classe,id);
-        session.close();
+      //  session.close();
         return obj;
     }
 
@@ -36,7 +37,7 @@ public abstract class GenericDAO <T> {
         session.beginTransaction();
         Criteria criteria=session.createCriteria(classe);
         list=criteria.list();
-        session.close();
+//        session.close();
         return list;
     }
 
@@ -53,12 +54,12 @@ public abstract class GenericDAO <T> {
             e.printStackTrace();
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }
 
-    public boolean excluir(long id) {
+    public boolean excluir(ID id) {
         boolean result=false;
         Session session=HibernateUtil.getSession();
         Transaction tx=session.getTransaction();
@@ -72,7 +73,7 @@ public abstract class GenericDAO <T> {
         } catch (Exception e) {
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }
@@ -84,14 +85,16 @@ public abstract class GenericDAO <T> {
 
         try {
             tx.begin();
-            session.update(obj);
+            session.merge(obj);
             tx.commit();
             result=true;
         } catch (Exception e) {
             if(tx.isActive()) tx.rollback();
         } finally {
-            session.close();
+//            session.close();
         }
         return result;
     }
+
+
 }

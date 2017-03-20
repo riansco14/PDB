@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jun 8, 2014, 3:27:00 PM
     Author     : herudi
 */
@@ -12,13 +12,13 @@ and open the template in the editor.
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
     -fx-padding: 10;
-    -fx-background-radius: 10;  
+    -fx-background-radius: 10;
 }
 
 .buttonCloseTambah{
-    -fx-background-image: url("/gambar/closePage.png");
+    -fx-background-image: url("/style/closePage.png");
     -fx-background-size: 100% 100%;
-    
+
 }
 
 .accordion > .titled-pane > .title {
@@ -64,24 +64,24 @@ and open the template in the editor.
 }
 
 
-/*.button-wow{ 
+/*.button-wow{
     -fx-background-color:
         linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
         #9d4024,
         #d86e3a,
         radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    
+
     -fx-background-insets: 0,1,2,3,0;
     -fx-text-fill: black;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;
-    
+
 }*/
 .custem-button-input {
     -fx-background-color: linear-gradient(#3399ff, #2A5058);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-    
+
 }
 .custem-button-input:hover {
     -fx-background-color: linear-gradient(#2A5058, #3399ff);
@@ -194,7 +194,7 @@ and open the template in the editor.
     -fx-text-fill: -fx-selection-bar-text;
 }
 
-.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected, 
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected,
 .tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected {
     -fx-background: -fx-accent;
     -fx-background-color: -fx-selection-bar;
@@ -210,9 +210,9 @@ and open the template in the editor.
 }
 
 /* When the TableView is _not_ focused, we show alternate selection colors */
-.table-row-cell:filled:selected:focused, 
+.table-row-cell:filled:selected:focused,
 .table-row-cell:filled:selected,
-.tree-table-row-cell:filled:selected:focused, 
+.tree-table-row-cell:filled:selected:focused,
 .tree-table-row-cell:filled:selected {
     -fx-background-color: lightgray;
     -fx-text-fill: -fx-selection-bar-text;
@@ -223,7 +223,7 @@ and open the template in the editor.
     -fx-opacity: -fx-disabled-opacity;
 }
 
-.table-view:row-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:hover { 
+.table-view:row-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:hover {
     -fx-background-color: -fx-table-cell-border-color, -fx-cell-hover-color;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-text-fill: -fx-text-inner-color;
@@ -237,7 +237,7 @@ and open the template in the editor.
 }
 
 .table-view:row-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused:hover,
-.tree-table-view:row-selection > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused:hover { 
+.tree-table-view:row-selection > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused:hover {
     -fx-background-color: -fx-table-cell-border-color, -fx-focus-color, -fx-cell-focus-inner-border, -fx-cell-hover-color;
     -fx-background-insets: 0, 0 0 1 0, 1 1 2 1, 2 2 3 2, 3 3 4 3;
     -fx-text-fill: -fx-text-inner-color;
@@ -266,11 +266,11 @@ and open the template in the editor.
 }
 .table-view:constrained-resize .filler,
 .tree-table-view:constrained-resize .filler {
-    -fx-border-color: 
-        derive(-fx-base, 80%) 
+    -fx-border-color:
+        derive(-fx-base, 80%)
         linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
-        derive(-fx-base, 10%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
+        derive(-fx-base, 10%)
+        linear-gradient(derive(-fx-base,80%), derive(-fx-base,-10%)),
         /* Outer border: */
         transparent -fx-table-header-border-color -fx-table-header-border-color -fx-table-header-border-color;
     -fx-border-insets: 0 1 1 1, 0 0 0 0;
@@ -290,9 +290,9 @@ and open the template in the editor.
     -fx-text-fill: -fx-selection-bar-text;
 }
 
-.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled > .table-cell:selected, 
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled > .table-cell:selected,
 .table-view:cell-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled > .table-cell:hover:selected,
-.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled > .tree-table-cell:selected, 
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled > .tree-table-cell:selected,
 .tree-table-view:cell-selection > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled > .tree-table-cell:hover:selected {
     -fx-background: -fx-accent;
     -fx-background-color: -fx-selection-bar;
@@ -309,9 +309,9 @@ and open the template in the editor.
 }
 
 /* When the TableView is _not_ focused, we show alternate selection colors */
- .table-row-cell:filled > .table-cell:selected:focused, 
+ .table-row-cell:filled > .table-cell:selected:focused,
  .table-row-cell:filled > .table-cell:selected,
- .tree-table-row-cell:filled > .tree-table-cell:selected:focused, 
+ .tree-table-row-cell:filled > .tree-table-cell:selected:focused,
  .tree-table-row-cell:filled > .tree-table-cell:selected {
     -fx-background-color: lightgray;
     -fx-text-fill: -fx-selection-bar-text;
@@ -368,17 +368,17 @@ and open the template in the editor.
     -fx-font-size: 1.083333em; /* 13pt - 1 more than the default font */
     -fx-size: 25;
     -fx-border-style: solid;
-    -fx-border-color: 
-        /* 
-          Inner border: we have different colours along the top, right, bottom and left.
-          Refer to RT-12298 for the spec.
-        */
-        derive(-fx-base, 80%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
-        derive(-fx-base, 10%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* Outer border: */
-        transparent -fx-table-header-border-color -fx-table-header-border-color transparent;
+    /*-fx-border-color:*/
+        /*!**/
+          /*Inner border: we have different colours along the top, right, bottom and left.*/
+          /*Refer to RT-12298 for the spec.*/
+        /**!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* Outer border: *!*/
+        /*transparent -fx-table-header-border-color -fx-table-header-border-color transparent;*/
     -fx-border-insets: 0 1 1 0, 0 0 0 0;
     -fx-border-width: 0.083333em, 0.083333em;
 }
@@ -387,17 +387,17 @@ and open the template in the editor.
 .tree-table-view .filler {
     -fx-size: 25;
     -fx-border-style: solid;
-    -fx-border-color: 
-        /* 
-          Inner border: we have different colours along the top, right, bottom and left.
-          Refer to RT-12298 for the spec.
-        */
-        derive(-fx-base, 80%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)
-        derive(-fx-base, 10%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* Outer border: */
-        transparent transparent -fx-table-header-border-color transparent;
+    /*-fx-border-color:*/
+        /*!**/
+          /*Inner border: we have different colours along the top, right, bottom and left.*/
+          /*Refer to RT-12298 for the spec.*/
+        /**!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%)*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* Outer border: *!*/
+        /*transparent transparent -fx-table-header-border-color transparent;*/
     -fx-border-insets: 0 0 1 0, 0 0 0 0;
     -fx-border-width: 0.083333em, 0.083333em 0 0.083333em 0.083333em;
 }
@@ -420,12 +420,12 @@ and open the template in the editor.
 
 .table-view .column-header .sort-order-dot.ascending,
 .tree-table-view .column-header .sort-order-dot.ascending {
-    -fx-background-insets: -1 0 1 0, 0; 
+    -fx-background-insets: -1 0 1 0, 0;
 }
 
 .table-view .column-header .sort-order-dot.descending,
 .tree-table-view .column-header .sort-order-dot.descending {
-    -fx-background-insets: 1 0 -1 0, 0; 
+    -fx-background-insets: 1 0 -1 0, 0;
 }
 
 .table-view .column-header .label,
@@ -437,14 +437,14 @@ and open the template in the editor.
 .tree-table-view > .column-header-background > .show-hide-columns-button{
     -fx-background-color: -fx-body-color;
 
-    -fx-border-color:
-        /* inner border: A copy of the inner border used above in the general column header area. */
-        derive(-fx-base, 80%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        derive(-fx-base, 10%) 
-        linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),
-        /* outer border: Slightly different to the above*/
-        transparent transparent -fx-table-header-border-color -fx-table-header-border-color;
+    /*-fx-border-color:*/
+        /*!* inner border: A copy of the inner border used above in the general column header area. *!*/
+        /*derive(-fx-base, 80%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*derive(-fx-base, 10%)*/
+        /*linear-gradient(to bottom, derive(-fx-base,80%) 20%, derive(-fx-base,-10%) 90%),*/
+        /*!* outer border: Slightly different to the above*!*/
+        /*transparent transparent -fx-table-header-border-color -fx-table-header-border-color;*/
     -fx-border-insets: 0 0 0 1, 0 0 0 0;
 }
 
@@ -454,7 +454,7 @@ and open the template in the editor.
     -fx-background-insets: 1 0 -1 0, 0;
 
     -fx-padding: 0.25em; /* 3px */
-    -fx-shape: "M398.902,298.045c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c-0.667,0-1.333,0-2,0c0,0.666,0,1.332,0,1.999c-0.667,0-1.333,0-2,0c0-0.667,0-1.333,0-1.999c-0.666,0-1.333,0-1.999,0c0-0.667,0-1.334,0-2c0.666,0,1.333,0,1.999,0C398.902,299.378,398.902,298.711,398.902,298.045z"; 
+    -fx-shape: "M398.902,298.045c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c0.667,0,1.333,0,2,0c0,0.667,0,1.333,0,2c-0.667,0-1.333,0-2,0c0,0.666,0,1.332,0,1.999c-0.667,0-1.333,0-2,0c0-0.667,0-1.333,0-1.999c-0.666,0-1.333,0-1.999,0c0-0.667,0-1.334,0-2c0.666,0,1.333,0,1.999,0C398.902,299.378,398.902,298.711,398.902,298.045z";
 }
 
 /*.nested-column-header .column-header {
@@ -493,4 +493,42 @@ and open the template in the editor.
 .tree-table-view .empty-table {
     -fx-background-color: white;
     -fx-font-size: 1.166667em; /* 14pt - 2 more than the default font */
+}
+/* TESTE TABS */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:180px;
+    -fx-tab-max-height: inherit;
+    -fx-alignment: center;
+
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab 
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: linear-gradient(#3399ff, #2A5058);
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: darkslategrey;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
 }

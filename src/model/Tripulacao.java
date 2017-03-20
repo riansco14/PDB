@@ -1,28 +1,28 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by RIAN on 10/11/2016.
  */
 @Entity
 public class Tripulacao {
-    private Collection<Funcionario> funcionarios;
+    private List<Funcionario> funcionarios;
 
-    @OneToMany
-    public Collection<Funcionario> getFuncionarios() {
+    @OneToMany(fetch = FetchType.LAZY)
+    public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 
-    public void setFuncionarios(Collection<Funcionario> funcionarios) {
+    public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
 
     private int id;
 
-    @GeneratedValue
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

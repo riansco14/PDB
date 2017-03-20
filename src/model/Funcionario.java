@@ -1,9 +1,11 @@
 package model;
 
+import model.Endereco.Endereco;
+
 import javax.persistence.Basic;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by RIAN on 10/11/2016.
@@ -11,7 +13,14 @@ import java.util.Collection;
 @Entity
 @DiscriminatorValue("F")
 public class Funcionario extends Pessoa {
+    public Funcionario() {
+    }
 
+    public Funcionario(List<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg, String cargo, String contaCorrente) {
+        super(enderecos, cpf, nome, email, telefone, senha, rg);
+        this.cargo = cargo;
+        this.contaCorrente = contaCorrente;
+    }
 
     private String cargo;
 
@@ -35,15 +44,5 @@ public class Funcionario extends Pessoa {
         this.contaCorrente = contaCorrente;
     }
 
-    public Funcionario construtor(String cargo,String contaCorrente,Collection<Endereco> enderecos, long cpf, String nome, String email, String telefone, String senha, long rg) {
-        this.setEnderecos(enderecos);
-        this.setCpf(cpf);
-        this.setCargo(cargo);
-        this.setContaCorrente(contaCorrente);
-        this.setEmail(email);
-        this.setTelefone(telefone);
-        this.setSenha(senha);
-        this.setNome(nome);
-        return this;
-    }
+
 }

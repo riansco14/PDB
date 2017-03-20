@@ -8,9 +8,20 @@ import javax.persistence.*;
 @Entity
 public class Assento {
 
+    public Assento() {
+    }
+
+    public Assento(AssentoClasseEnum classe, boolean estado, Bilhete numBilhete, int numAssento, Voo voo) {
+        this.classe = classe;
+        this.estado = estado;
+        this.numBilhete = numBilhete;
+        this.numAssento = numAssento;
+        this.voo = voo;
+    }
+
     private int id;
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     public int getId() {
         return id;
@@ -20,14 +31,15 @@ public class Assento {
         this.id = idAssento;
     }
 
-    private int classe;
+    private AssentoClasseEnum classe;
 
-    @Basic
-    public int getClasse() {
+    @Enumerated(EnumType.ORDINAL)
+
+    public AssentoClasseEnum getClasse() {
         return classe;
     }
 
-    public void setClasse(int classe) {
+    public void setClasse(AssentoClasseEnum classe) {
         this.classe = classe;
     }
 
@@ -44,12 +56,51 @@ public class Assento {
 
     private Bilhete numBilhete;
 
-    @OneToOne(mappedBy = "assento")
+    @OneToOne(cascade = CascadeType.MERGE)
     public Bilhete getNumBilhete() {
         return numBilhete;
     }
 
     public void setNumBilhete(Bilhete numBilhete) {
         this.numBilhete = numBilhete;
+    }
+
+    private int numAssento;
+
+    @Basic
+    public int getNumAssento() {
+        return numAssento;
+    }
+
+    public void setNumAssento(int numAssento) {
+        this.numAssento = numAssento;
+    }
+
+
+    private Voo voo;
+
+    @ManyToOne
+    public Voo getVoo() {
+        return voo;
+    }
+
+    public void setVoo(Voo voo) {
+        this.voo = voo;
+    }
+    @Transient
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Assento assento = (Assento) o;
+
+        return numAssento == assento.numAssento;
+
+    }
+    @Transient
+    @Override
+    public int hashCode() {
+        return numAssento;
     }
 }

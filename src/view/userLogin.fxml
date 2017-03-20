@@ -33,7 +33,7 @@
 <font>
 <Font name="System Bold" size="14.0" />
 </font>
-</Button><PasswordField fx:id="txtPass" layoutY="133.0" prefHeight="30.0" prefWidth="297.0" promptText="Password">
+</Button><PasswordField fx:id="fieldPassword" layoutY="133.0" prefHeight="30.0" prefWidth="297.0" promptText="Password">
 <font>
 <Font size="14.0" />
 </font></PasswordField><TextField fx:id="fieldUserName" layoutY="89.0" prefHeight="30.0" prefWidth="297.0" promptText="Username">
@@ -42,6 +42,11 @@
 </font></TextField>
 </children>
 </Pane>
+            <Label layoutX="81.0" layoutY="320.0" onMouseClicked="#actionCadastrar" text="Não possui cadastro ? Clique aqui" textFill="#2251a1" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
 </children></AnchorPane><Button layoutX="373.1875" layoutY="5.5" mnemonicParsing="false" onAction="#actionSair" prefHeight="20.0" prefWidth="20.0" style="-fx-background-image: url(&quot;/style/closePage.png&quot;); -fx-background-size: 100% 100%;">
 <font>
 <Font size="8.0" />

@@ -1,8 +1,8 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by RIAN on 04/02/2017.
@@ -31,71 +31,84 @@ public class Produto_Voo {
         this.valorExecutivo = valorExecutivo;
     }
 
-    private int vagasEconomico;
-
-    @Basic
-    public int getVagasEconomico() {
-        return vagasEconomico;
-    }
-
-    public void setVagasEconomico(int vagasEconomico) {
-        this.vagasEconomico = vagasEconomico;
-    }
-
-    private int vagasExecutivo;
-
-    @Basic
-    public int getVagasExecutivo() {
-        return vagasExecutivo;
-    }
-
-    public void setVagasExecutivo(int vagasExecutivo) {
-        this.vagasExecutivo = vagasExecutivo;
-    }
-
-    private int vagasTotal;
-
-    @Basic
-    public int getVagasTotal() {
-        return vagasTotal;
-    }
-
-    public void setVagasTotal(int vagasTotal) {
-        this.vagasTotal = vagasTotal;
-    }
-
     private Date dataPartida;
 
-    private Collection<Voo> trechos;
+    @Basic
+    public Date getDataPartida() {
+        return dataPartida;
+    }
 
-    @OneToMany
-    public Collection<Voo> getTrechos() {
+    public void setDataPartida(Date dataPartida) {
+        this.dataPartida = dataPartida;
+    }
+
+    private List<Voo> trechos;
+
+    @ManyToMany
+    @JoinTable(name="produto_voo_trechos", joinColumns=
+            {@JoinColumn(name="produto_voo_id")}, inverseJoinColumns=
+            {@JoinColumn(name="voos_id")})
+    public List<Voo> getTrechos() {
         return trechos;
     }
 
-    public void setTrechos(Collection<Voo> trechos) {
+    public void setTrechos(List<Voo> trechos) {
         this.trechos = trechos;
-    }
-
-    private Rota rota;
-
-    @OneToOne(optional = false)
-    public Rota getRota() {
-        return rota;
-    }
-
-    public void setRota(Rota rota) {
-        this.rota = rota;
     }
 
     private int id;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    private Aeroporto origem;
+
+    @OneToOne
+    public Aeroporto getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(Aeroporto origem) {
+        this.origem = origem;
+    }
+
+    private Aeroporto destino;
+
+    @OneToOne
+    public Aeroporto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeroporto destino) {
+        this.destino = destino;
+    }
+
+    private Boolean vooComEscala;
+
+    @Basic
+    public Boolean getVooComEscala() {
+        return vooComEscala;
+    }
+
+    public void setVooComEscala(Boolean basic) {
+        this.vooComEscala = basic;
+    }
+
+    private Date dataChegada;
+
+    @Basic
+    public Date getDataChegada() {
+        return dataChegada;
+    }
+
+    public void setDataChegada(Date dataChegada) {
+        this.dataChegada = dataChegada;
     }
 }
